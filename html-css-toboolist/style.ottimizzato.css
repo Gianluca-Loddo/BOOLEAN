@@ -1,0 +1,103 @@
+/* RESET DELLA PAGINA: il selettore universale(*) applica a tutti gli
+elementi della pagina, il margin 0 e il padding toglie tutti i valori
+di default e la regola box sizing Dice al browser: "Quando imposti width o height,
+includi anche padding e bordi nel calcolo."*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f6f8f9;
+    /* colore di sfondo della pagina: grigino molto chiaro, quasi bianco */
+    font-family: 'Roboto', sans-serif;
+    /* specifica il tipo di carattere da utilizzare per tutta la pagina */
+    color: #333;
+    /* colore del testo generale */
+}
+
+/* HEADER */
+header {
+    background-color: #fff;
+    /* se non specifico il colore dell'header questo mi farà vedere il colore di sfondo del body */
+    padding: 10px 10px;
+    /* 10px sopra e sotto, 10px a destra e sinistra */
+}
+
+header img {
+    vertical-align: middle;
+    /* allinea l'immagine verticalmente al centro.
+    questa proprietà funziona solo su elementi inline o inline-block */
+}
+
+header h1 {
+    display: inline-block;
+    /* rende l'elemento h1 un elemento inline-block
+    in modo che possa essere allineato con l'immagine */
+    vertical-align: middle;
+    /* allinea il testo verticalmente al centro rispetto all'immagine */
+    margin-left: 10px;
+    /* spazio a sinistra rispetto all'immagine */
+    font-size: 40px;
+}
+
+/* CONTENITORE BOTTONE IN ALTO */
+.topper_button_container {
+    background-color: white;
+    width: 100%;
+    max-width: 800px;
+    /* se il contenitore è più largo di 800px, si adatterà a 800px */
+    margin: 50px auto 2px;
+    /* margine superiore di 50px, destro e sinistro automatici per centrare, 
+    inferiore di 2px */
+
+    /* perché il margin auto possa funzionare,
+    il contenitore deve avere una larghezza definita (width o max-width) */
+
+    padding: 20px 40px 10px;
+    /* 20px sopra, 40px a destra e sinistra, 10px sotto */
+    border-radius: 5px 5px 0 0;
+    /* arrotonda gli angoli superiori del contenitore del bottone: SINISTRA E DESTRA */
+}
+
+/* STILE DEL BOTTONE */
+.topper_button {
+    background-color: #47adf1;
+    color: white;
+    padding: 10px 20px;
+    /* spazio interno tra il contenuto (es: "Add Task") e il bordo del bottone */
+    border: solid 1px #47adf1;
+    /* bordo di 1px, solido, stesso colore del bottone */
+    border-radius: 5px;
+    /* arrotonda gli angoli del bottone */
+    font-size: 16px;
+}
+
+.topper_button.invisible {
+    /* Applica lo stile solo agli elementi che hanno sia topper_button che invisible come classi */
+    background-color: transparent;
+    /* rende il bottone invisibile, ma mantiene lo spazio occupato */
+    color: #c5cbcf;
+    border: solid 1px currentColor;
+    /* bordo dello stesso colore del testo grazie a currentColor */
+}
+
+/* CONTENITORE DELLA LISTA */
+.todo_list_container {
+    background-color: white;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 2px;
+    /* margine superiore 0px, inferiore 2px, centrato orizzontalmente */
+    padding: 20px 40px;
+    /* 20px sopra, 40px a destra e sinistra, 20px sotto */
+    border-radius: 0 0 5px 5px;
+    /* arrotonda gli angoli inferiori: DESTRA E SINISTRA */
+}
+
+/* LISTA TASK */
+.todo_list {
+    list-style: none;
+    /* rimuove i punti elenco predefiniti della lista */
+}

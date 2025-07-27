@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Biglietto del Treno</title>
+</head>
+<body>
+  <h1>Calcola il prezzo del tuo biglietto</h1>
+
+  <!--Etichetta descrittiva per il campo input dei km.
+  for="km" collega il testo al campo con id="km" -->
+  <label for="km">Quanti chilometri vuoi percorrere?</label> 
+  
+  <!-- Campo per scrivere i chilometri.
+  type="number": accetta solo numeri
+  id="km": serve a collegarlo al JavaScript -->
+  <input type="number" id="km" />
+
+ <br>
+ <br>
+
+  <!-- Etichetta per il campo input dell'età -->
+  <label for="eta">Quanti anni hai?</label>
+  <!-- Campo per scrivere l'età.
+  type="number": accetta solo numeri
+  id="eta": serve a collegarlo al JavaScript -->
+  <input type="number" id="eta" />
+
+  <br>
+  <br>
+  <!-- Bottone per calcolare il prezzo e collegamento a script.js -->
+  <button id="calcola">Calcola prezzo</button>
+
+  <h2 id="risultato"></h2>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+<!-- NOTA SU USO DI LABEL
+
+Le label sono importanti per l'accessibilità e migliorano l'usabilità del modulo.
+Collegando una label a un campo di input, si facilita la selezione del campo stesso, 
+soprattutto per gli utenti che utilizzano tecnologie assistive. Inoltre, cliccando sulla label, 
+si attiva automaticamente il campo di input associato.
+
+-->

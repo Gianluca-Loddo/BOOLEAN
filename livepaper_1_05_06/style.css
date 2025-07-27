@@ -1,0 +1,33 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --font-stack: 'Helvetica Neue', sans-serif;
+  --border-radius: 5px;
+}
+
+/*  Styles for form elements */
+
+/*:root è un selettore CSS che rappresenta l’elemento radice del documento (in pratica, <html>).
+
+All'interno di :root, vengono dichiarate delle variabili CSS personalizzate (detti anche custom properties):
+
+--primary-color: blu (#3498db)
+
+--secondary-color: verde (#2ecc71)
+
+--font-stack: font "Helvetica Neue", con alternativa sans-serif
+
+--border-radius: raggio di 5px per angoli arrotondati*/
+
+
+input[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+  font-family: var(--font-stack);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/*Questa regola CSS applica uno stile personalizzato a tutti gli elementi HTML <input type="submit">, ovvero i bottoni usati per inviare form.*/

@@ -1,0 +1,133 @@
+<!-- 
+✅ BONUS 1:
+Centralizzare il colore del testo bianco (text-white), cioè scriverlo una volta sola invece che su ogni colonna scura.
+
+✅ BONUS 2:
+Usare row-cols per dire a Bootstrap quante colonne devono esserci su una riga, senza scrivere col-6, col-md-4 ecc. in ogni colonna.
+-->
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Grid Layout Responsive</title>
+    <!-- Bootstrap 5 CDN - Link al CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar / Titolo Principale -->
+    <div class="text-center mt-4"> <!-- centra il testo e mt-4 da margine sopra-->
+        <h2>Bootstrap 5 Responsive Grid</h2>
+        <p class="text-muted">Layout a griglia con diversi breakpoint (sm, md, lg).</p>
+        <!-- text-muted colore grigio chiaro -->
+    </div>
+
+    <!-- Container Principale -->
+    <div class="container mt-5"> <!-- container mantiene tutto al centro e lascia margine ai lati -->
+
+        <!-- RIGA 1: 2 colonne -->
+        <div class="row"> <!--Inizia una riga: è come una striscia su cui si "poggiano" le colonne -->
+
+            <!-- PRIMA COLONNA (BIANCA) -->
+            <div class="col-12 col-md-6 col-lg-4 bg-light p-3">
+                <!--  Crea una colonna con:
+                    col-12 = larga tutta su telefoni
+                    col-md-6 = mezza su tablet
+                    col-lg-4 = 1/3 su PC
+                    bg-light = sfondo chiaro
+                    p-3 = spazio interno (padding)-->
+                <h5>Colonna 1</h5>
+                <p>Larghezza intera su dispositivi piccoli, metà larghezza su dispositivi medi e un terzo su dispositivi
+                    grandi .</p>
+            </div>
+
+            <!-- SECONDA COLONNA (GRIGIA)-->
+            <div class="col-12 col-md-6 col-lg-8 bg-secondary text-white p-3">
+                <!-- text-white per rendere leggibile il testo su sfondo scuro -->
+                <!--  Seconda colonna:
+                    col-12 = tutta larghezza su mobile
+                    col-md-6 = metà su tablet
+                    col-lg-8 = 2/3 su PC
+                    bg-secondary = grigio scuro
+                    text-white = testo bianco (per contrasto)
+                    p-3 = padding-->
+                <h5>Colonna 2</h5>
+                <p>Larghezza intera su dispositivi piccoli, metà larghezza su dispositivi medi e due terzi su
+                    dispositivi grandi .</p>
+            </div>
+
+        </div>
+
+
+        <!-- RIGA 2: 3 colonne con bonus 1 e 2 -->
+        <div class="row row-cols-1 row-cols-md-3 mt-4 text-white">
+            <!-- row-cols-1 per 1 colonna su piccoli, row-cols-md-3 per 3 su medi e grandi -->
+            <div class="bg-primary p-3">
+                <h5>Colonna 1</h5>
+                <p>Metà larghezza su dispositivi piccoli e un terzo su dispositivi medi e più grandi.</p>
+            </div>
+            <div class="bg-success p-3">
+                <h5>Colonna 2</h5>
+                <p>Metà larghezza su dispositivi piccoli e un terzo su dispositivi medi e più grandi.</p>
+            </div>
+            <div class="bg-danger p-3">
+                <h5>Colonna 3</h5>
+                <p>Larghezza intera su dispositivi piccoli (col-12) e un terzo su dispositivi medi e più grandi.</p>
+            </div>
+        </div>
+
+        <!-- RIGA 3: 4 colonne con bonus 2 -->
+        <!-- RIGA 3: 4 colonne con row-cols -->
+        <div class="row row-cols-2 row-cols-md-4 mt-4">
+            <div class="bg-info text-white p-3">
+                <h5>Colonna 1</h5>
+                <p>Metà larghezza su dispositivi piccoli e un quarto su dispositivi medi e più grandi.</p>
+            </div>
+            <div class="bg-warning text-white p-3">
+                <h5>Colonna 2</h5>
+                <p>Metà larghezza su dispositivi piccoli e un quarto su dispositivi medi e più grandi.</p>
+            </div>
+            <div class="bg-dark text-white p-3">
+                <h5>Colonna 3</h5>
+                <p>Metà larghezza su dispositivi piccoli e un quarto su dispositivi medi e più grandi.</p>
+            </div>
+            <div class="bg-light p-3">
+                <h5>Colonna 4</h5>
+                <p>Metà larghezza su dispositivi piccoli e un quarto su dispositivi medi e più grandi.</p>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
+
+
+<!-- QUANDO SI POSSONO APPLICARE I BONUS
+ 
+✅ BONUS 1: text-white centralizzato
+Si può applicare a qualsiasi riga in cui tutte le colonne hanno uno sfondo scuro
+
+| Riga       | Colonne scure?                                                              | Posso mettere `text-white` sulla riga? |
+| ---------- | ------------------------------------------------------------------------    | -------------------------------------- |
+| **Riga 1** | ❌ Solo 1 colonna è scura (`bg-secondary`), l'altra è chiara (`bg-light`)  |❌ NO                                   |
+| **Riga 2** | ✅ Tutte scure (`bg-primary`, `bg-success`, `bg-danger`)                   |✅ SÌ                                   |
+| **Riga 3** | ❌ L’ultima colonna è chiara (`bg-light`)                                  |❌ NO                                   |
+
+✅ BONUS 2: row-cols al posto di col-6, col-md-4 ecc.
+Si può applicare quando si vuole che Bootstrap gestisca automaticamente il numero di colonne per riga, 
+senza specificare manualmente le classi `col-6`, `col-md-4` ecc.
+Si può usare solo se le colonne nella riga sono tutte della stessa larghezza.
+
+| Riga       | Colonne uguali?                                          | Posso usare `row-cols`?                   |
+| ---------- | -----------------------------------------------------    | ----------------------------------------- |
+| **Riga 1** | ❌ No → una è `col-lg-4`, l'altra `col-lg-8` (diverse)  |❌ NO                                      |
+| **Riga 2** | ✅ Sì, con `row-cols-md-3`                              |✅ SÌ                                      |
+| **Riga 3** | ✅ Sì, tutte `col-md-3` (uguali)                        |✅ SÌ (anche se una è chiara, non importa) |
+
+-->

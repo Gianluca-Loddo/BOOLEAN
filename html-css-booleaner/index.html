@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Booleaner</title>
+    <!--Sto collegando alla pagina html il foglio di stile-->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header> <!--è di tipo block dunque sarà l'immagine che inserirò a definire la sua dimensione-->
+        <!--assegno un id all'immagine così da impostare le dimensioni nello stile css-->
+        <img id="logo" src="./img/logo.svg" alt="The Booleaner img">
+    </header>
+
+    <main>
+        <section> <!-- Sto creando la sezione TITOLO con didascalia-->
+            <h1>Internet deve essere al servizio del "bene pubblico": il <br>manifesto di Tim Berners-Lee</h1>
+            <p class="info-autore">Scritto da <span style="color: rgb(41, 173, 230)">The Booleaner</span>
+                <!--ho inserito uno stile css in linea senza richiamo al foglio-->
+                <br>
+                <span class="info-autore-data">il 10/10/2020</span>
+            </p>
+        </section>
+
+
+        <section> <!-- Sto creando la sezione FOTO con didascalia-->
+            <div id="immagini">
+                <!--Sto usando un ID perchhè voglio usare queste impostazioni solo per questa sezione foto-->
+                <img src="./img/tim-1.jpg" alt="Tim Berners-Lee 1">
+                <img src="./img/tim-2.jpg" alt="Tim Berners-Lee 2">
+                <div id="didascalia-immagini">
+                    <!--inserendo un DIV essendo di tipo blocco le didascalie vanno a capo e posso impostare lo stile su CSS-->
+                    1ª Foto: John S. and James L. Knight Foundation, di Scott Henrichsen
+                    <br>
+                    2ª Foto: Wikimedia, di Paul Clarke
+                </div>
+            </div>
+        </section>
+        <article style="width: 50%;">
+            <!-- Sto creando la sezione ARTICOLO con testo e immagini e ho impostato la larghezza al 50% rispetto al contenitore BODY inserendo una proprietà CSS direttamente nel foglio html-->
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+                <mark>laoreet dolore magna aliquam erat volutpat.</mark> Ut wisi enim ad minim veniam, quis nostrud
+                <span class="testo-evidenziato">exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+                    commodo consequat</span>.
+                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum
+                dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent
+                luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+            </p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
+                    ut laoreet dolore magna aliquam erat volutpat.</li>
+                <li>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
+                    aliquip ex ea commodo consequat.</li>
+                <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+                    laoreet dolore magna aliquam erat volutpat.</li>
+            </ul>
+
+            <table>
+                <!-- Sto creando una tabella con 3 colonne e 3 righe, la prima riga è l'intestazione, in CSS ho impostato la larghezza della prima e della seconda colonna della tabella al 20% ognuna della larghezza totale rispetto al contenitore - Article -->
+                <thead>
+                    <tr class="head_table"> <!-- Ho inserito una classe per poterla stilizzare in CSS -->
+                        <th>Lorem ipsum dolor</th>
+                        <th>Lorem ipsum dolor</th>
+                        <th>Lorem ipsum dolor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="riga_azzurra"> <!-- Ho inserito una classe per poterla stilizzare in CSS -->
+                        <td>Lorem ipsum dolor</td>
+                        <td>Lorem ipsum dolor</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Accusantium eos quo, placeat
+                            consectetur ullam fugiat similique perferendis repellendus illo mollitia eveniet expedita a
+                            quia modi. Totam saepe quibusdam natus harum.</td>
+                    </tr>
+                    <tr>
+                        <td>Lorem ipsum dolor</td>
+                        <td>Lorem ipsum dolor</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Accusantium eos quo, placeat
+                            consectetur ullam fugiat similique perferendis repellendus illo mollitia eveniet expedita a
+                            quia modi. Totam saepe quibusdam natus harum.</td>
+                    </tr>
+                    <tr class="riga_azzurra">
+                        <td>Lorem ipsum dolor</td>
+                        <td>Lorem ipsum dolor</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Accusantium eos quo, placeat
+                            consectetur ullam fugiat similique perferendis repellendus illo mollitia eveniet expedita a
+                            quia modi. Totam saepe quibusdam natus harum.</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+
+
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+                laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor
+                in hendrerit in vulputate velit esse molestie consequat, vel
+                <span class="testo-evidenziato">illum dolore eu feugiat nulla facilisis at vero eros et accumsan et
+                    iusto</span> odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait
+                nulla facilisi.
+            </p>
+        </article>
+    </main>
+    <footer>
+        <h4>Potrebbero interessarti</h4>
+        <div id="Foto_Monitor_1">Lorem ipsum dolor</div>
+        <br>
+        <div id="Foto_Monitor_2">Lorem ipsum dolor</div>
+    </footer>
+</body>
+
+</html>

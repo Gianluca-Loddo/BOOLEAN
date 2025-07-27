@@ -1,0 +1,112 @@
+/* MODALITA' ALTERNATIVA PER DISPOSITIVI TABLET (≥768px) */
+
+@media (min-width: 768px) {
+  /* 1. Logo allineato a sinistra */
+  #topbar {
+    justify-content: flex-start;
+  }
+
+  /* 2. Padding del main più ampio */
+  main {
+    padding: 40px;
+  }
+
+  /* 3. Mostrare il testo nascosto: "(Dolce Tradizionale)" */
+  .recipe-origin {
+    display: inline;
+  }
+
+  /* 4. Titolo della ricetta più grande */
+  .recipe-name {
+    font-size: 2rem;
+  }
+
+  /* 5. (Recipe) Info ricetta in griglia */
+  .recipe-info {
+    display: grid; /* Mostra le info in griglia */
+    grid-template-columns: 1fr 1fr; /* Due colonne: 1fr significa "una frazione del totale disponibile" */
+    gap: 30px;
+  }
+
+  /* 6. Bottoni social più larghi */
+  .social-networks .btn {
+    width: 100%;
+  }
+
+  /* 7. Mostrare il banner pubblicitario */
+  .ads {
+    display: block; /* Mostra gli annunci pubblicitari: occupa tutta la larghezza disponibile del contenitore */
+  }
+
+  /* 8. Immagine nella descrizione circondata dal testo */
+  .presentation p img {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+
+/* MODALITA' ALTERNATIVA PER DISPOSITIVI DESKTOP (≥992px)*/
+
+
+@media (min-width: 992px) {
+  /* 1. Titolo della ricetta ancora più grande */
+  .recipe-name {
+    font-size: 2.5rem;
+  }
+
+  /* 2. (Recipe) Info ricetta una sotto l’altra: torna a blocco verticale */
+  .recipe-info {
+    display: block;
+  }
+
+  /* 3. Video e info affiancati */
+  .recipe-card {
+    display: flex;
+  }
+
+  .recipe-video {
+    width: 60%;
+    height: auto;
+  }
+
+  .recipe-info {
+    width: 40%;
+    padding: 30px;
+  }
+
+  /* 4. Mostrare etichette social: Etichette social (Facebook, Twitter...) visibili  */
+  .social-networks .label {
+    display: inline;
+  }
+
+  /* 5. Footer su due colonne */
+  footer {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  footer nav ul {
+    justify-content: flex-end;
+  }
+}
+
+/* MODALITA' ALTERNATIVA PER DISPOSITIVI MOBILE (BONUS) (≥576px) */
+
+@media (min-width: 576px) {
+  /* 1. Immagine con float a sinistra: circondare immagine con testo nella descrizione */
+  .presentation p img {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }
+
+  /* 2. Bottoni social più larghi già su mobile grande */
+  .social-networks .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,278 @@
+/* RESET BASE */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* FONT STACK: usa il primo disponibile tra questi font */
+}
+
+/*__________________________________________________*/
+/* CLASSI DEBUG - SVILUPPO (assegnazioni css: colori, bordi) */
+
+/*DEBUG HEADER*/
+.debug header {
+    background-color: #aed8e5;
+    height: 610px;
+}
+
+.debug .hero {
+    background-color: #04008b;
+    height: 520px;
+}
+
+.debug .box-hero {
+    background-color: #ee82ed;
+    height: 415px;
+    width: 945px;
+    border: 2px dashed black;
+}
+
+/*DEBUG MAIN SEZIONI ALTERNATE*/
+
+.debug .grande {
+    background-color: #1f90ff;
+    border: 2px dashed black;
+}
+
+.debug .piccola {
+    background-color: #ffc0ca;
+    border: 2px dashed black;
+}
+
+/*__________________________________________________*/
+
+/*IN QUESTO PUNTO INVERTIAMO LA POSIZIONE DELLE COLONNE (PICCOLA > GRANDE)
+DELLA SECONDA SEZIONE ALTERNATA E ASSEGNAMO LO SFONDO GRIGIO*/
+
+/* Assegniamo lo sfondo grigio alla sezione con classe sezione-invertita */
+.debug .sezione-invertita {
+    background-color: #d3d3d3;
+}
+
+/* All'interno di sezione-invertita, spostiamo .piccola prima di .grande nel layout flex */
+.debug .sezione-invertita .piccola {
+    order: -1;
+}
+
+/*NOTA: È stata aggiunta manualmente la classe .sezione-invertita all'HTML della seconda sezione.
+Questo metodo è più sicuro e robusto rispetto all’uso di :nth-of-type, o :nth-child perché non dipende dalla
+struttura del DOM (numero o tipo di tag), ed è più leggibile e mantenibile. */
+
+/*__________________________________________________*/
+
+
+/*IN QUESTO PUNTO ASSEGNIAMO SFONDO BIANCO ALLA PRIMA E ULTIMA SEZIONE*/
+
+/* Assegniamo sfondo bianco alla prima e ultima sezione alternata tramite classi esplicite */
+.debug .prima .box-sezione-alternata,
+.debug .ultima .box-sezione-alternata {
+    background-color: white;
+}
+
+/*NOTA: non è stato usato :first-child e :last-child perché non affidabile
+in presenza di altri figli nel DOM. Le classi .prima e .ultima sono più sicure, 
+leggibili e robuste per assegnare uno stile specifico. */
+
+/*__________________________________________________*/
+
+
+/*DEBUG MAIN BLOCCO FINALE*/
+
+.debug .box-blocco-finale {
+    background-color: #d3d3d3;
+}
+
+.debug .box-contenuto-finale {
+    background-color: #228b22;
+    height: 935px;
+    border: 2px dashed black;
+}
+
+/*DEBUG FOOTER*/
+
+.debug .box-footer {
+    background-color: #23272a;
+}
+
+.debug .BOX-COLONNE {
+    height: 600px;
+}
+
+.debug .box-footer .Colonne-verticali-footer {
+    background-color: #21b2aa;
+}
+
+
+/* Prima colonna del FOOTER:
+Colore rosa.
+Larghezza più grande.
+Bordo nero tratteggiato. */
+.debug .BOX-COLONNE > div:first-child { /*> div:first-child indica il primo div figlio diretto, non dipende da una classe.*/
+    background-color: #f08080;
+    width: 375px;
+    border: 2px dashed black;
+}
+
+/* Colonne dalla seconda alla quarta: bordo bianco */
+.debug .BOX-COLONNE > div:nth-child(2),
+.debug .BOX-COLONNE > div:nth-child(3),
+.debug .BOX-COLONNE > div:nth-child(4),
+.debug .BOX-COLONNE > div:nth-child(5) {
+    border: 2px dashed white;
+}
+
+
+.debug .footer {
+    background-color: #7effd4;
+}
+
+.debug .footer .footer-logo,
+.debug .footer .footer-bottone {
+    background-color: #ffb6c1;
+    border: 2px dashed black;
+}
+/*__________________________________________________*/
+
+/* HEADER */
+.box-header {
+    padding: 20px 0 0;
+}
+
+nav {
+    display: flex; /* Usa flexbox per allineare gli elementi: altrimenti logo, ham, button andrebbero a capo */
+    max-width: 1250px;
+    justify-content: center;
+    margin: 0 auto 20px; /* Centra il nav (destra e sinistra) spaziandolo 20 px dal blocco successivo hero */
+}
+
+.logo,
+.login {
+    flex-grow: 1; /* Permette al logo e al login di occupare lo spazio disponibile */
+    background-color: #d9a520;
+    border: 2px dashed black;
+    padding: 10px 20px;
+}
+
+.ham {
+    flex-grow: 3; /* Permette al box dei link di occupare più spazio */
+    text-align: center;
+    background-color: #d9a520;
+    border: 2px dashed black;
+    padding: 10px 20px;
+}
+
+button[type="button"] {
+    /* Rimuove lo stile predefinito del bottone */
+    appearance: none;
+    border: none;
+    background: none;
+    font: inherit;
+    color: inherit;
+    /* RESET SELETTIVO DEL BOTTONE: è stato usato <button type="button"> e
+    usando all:unset non avrebbe risposto alle proprietà flex ereditate.
+    Quando si azzera tutto con all: unset, il pulsante LOGIN non si comporta più come gli altri div.
+    Quindi flex-grow non viene interpretato correttamente, e il pulsante si "collassa". */
+
+    /* Aggiungi qui eventuali stili personalizzati per il bottone */
+    background-color: #d9a520;
+    border: 2px dashed black;
+    /* Bordo del bottone: dashed = tratteggiato */
+    cursor: pointer;
+    /*manina al passaggio del mouse*/
+    color: black;
+    /* Colore del testo */
+    padding: 10px 20px;
+    text-align: end;
+}
+
+.login {
+    cursor: pointer; /*manina al passaggio del mouse*/
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+
+/*__________________________________________________*/
+
+/* MAIN */
+.sezione-alternata {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0; /* Spaziatura verticale tra le sezioni */
+}
+
+.box-sezione-alternata {
+    display: flex;
+    width: 1250px;
+    align-items: flex-start;
+}
+
+.grande {
+    height: 520px;
+    flex-grow: 1;
+}
+
+.piccola {
+    height: 520px;
+    width: 500px;
+}
+
+.box-blocco-finale {
+    display: flex;
+    padding: 45px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-contenuto-finale {
+    width: 1245px;
+}
+/*__________________________________________________*/
+
+/* FOOTER */
+.BOX-COLONNE {
+    display: flex;
+    width: 1250px;
+    padding: 10px 0 40px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.BOX-COLONNE:first-child {
+    flex-grow: 1;
+}
+
+.BOX-COLONNE .Colonne-verticali-footer:nth-child(2),
+.BOX-COLONNE .Colonne-verticali-footer:nth-child(3),
+.BOX-COLONNE .Colonne-verticali-footer:nth-child(4),
+.BOX-COLONNE .Colonne-verticali-footer:nth-child(5) {
+    width: 215px;
+}
+
+.footer {
+    width: 1250px;
+    margin: 30px auto 0;
+    padding: 20px 0;
+}
+
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.footer .footer-logo,
+.footer .footer-bottone {
+    padding: 10px 15px;
+}

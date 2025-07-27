@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Struttura Discord - HTML - CSS</title>
+    <!-- Collegamento foglio stile css -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<!-- Assegnazione della classe DEBUG a body -->
+<!-- La classe debug serve per attivare uno stile di sviluppo (vedi: colori di sfondo, bordi, ecc. nel file CSS) -->
+
+<body class="debug">
+
+    <!-- Header -->
+    <header>
+        <div class="box-header"> <!-- Box per il contenuto dell'header, serve per organizzare lo spazio -->
+            <nav> <!-- Box per la navigazione che conterrà il logo, i link e il pulsante di login -->
+                <!-- La classe nav serve per stilizzare il box della navigazione: È un tag semantico HTML5 -->
+                <div class="logo">logo</div>
+                <div class="ham">link link link link link</div>
+                <button type="button" class="login">login</button>
+                <!-- Un bottone per il login. Ha la classe login per essere stilizzato dal CSS. -->
+            </nav>
+            <div class="hero"> <!-- Box per l'immagine di sfondo dell'header -->
+                <div class="box-hero"></div> <!-- Box per l'inserimento dei contenuti: scritte, bottoni etc. -->
+            </div>
+        </div>
+    </header>
+
+
+
+    <main>
+
+        <!-- SEZIONI ALTERNATE 1 - 2 - 3 
+         Ogni section-box contiene un contenitore (box2) con due blocchi:
+         grande: il contenuto principale (grande).
+         piccola: il contenuto secondario (piccolo).
+         La 2ª sezione è leggermente diversa nel CSS (ha sfondo grigio e ordine invertito). -->
+
+        <!-- Sezione Alternata 1 -->
+        <div class="sezione-alternata prima">
+            <div class="box-sezione-alternata"> <!-- Box per la sezione alternata, serve per organizzare lo spazio -->
+                <div class="grande"></div>
+                <div class="piccola"></div>
+            </div>
+        </div>
+        <!----------------------------------------->
+
+        <!-- Sezione Alternata 2 -->
+        <div class="sezione-alternata sezione-invertita">
+            <div class="box-sezione-alternata"> <!-- Box per la sezione alternata, serve per organizzare lo spazio -->
+                <div class="grande"></div>
+                <div class="piccola"></div>
+            </div>
+        </div>
+        <!----------------------------------------->
+
+        <!-- Sezione Alternata 3 -->
+        <div class="sezione-alternata ultima">
+            <div class="box-sezione-alternata"> <!-- Box per la sezione alternata, serve per organizzare lo spazio -->
+                <div class="grande"></div>
+                <div class="piccola"></div>
+            </div>
+        </div>
+        <!----------------------------------------->
+
+
+
+        <!-- BLOCCO FINALE -->
+        <div class="box-blocco-finale"> <!-- Box per il contenuto finale, serve per organizzare lo spazio -->
+            <div class="box-contenuto-finale"></div>
+        </div>
+        <!----------------------------------------->
+
+
+    </main>
+
+    <footer>
+        <div class="box-footer"> <!-- Box per il contenuto del footer, serve per organizzare lo spazio -->
+
+            <!-- Sezione COLONNE -->
+            <div class="BOX-COLONNE"><!-- Box per le colonne del footer -->
+                <div class="Colonne-verticali-footer"></div>
+                <div class="Colonne-verticali-footer"></div>
+                <div class="Colonne-verticali-footer"></div>
+                <div class="Colonne-verticali-footer"></div>
+                <div class="Colonne-verticali-footer"></div>
+            </div>
+            <!----------------------------------------->
+
+            <hr /><!-- Linea orizzontale per separare le sezioni del footer -->
+
+            <!-- Sezione PIE' DI PAGINA -->
+            <div class="footer"><!-- Box per il contenuto del piè di pagina -->
+                <div class="footer-flex"><!-- Box per organizzare il contenuto del piè di pagina in modo flessibile -->
+                    <div class="footer-logo">Logo</div>
+                    <div class="footer-bottone">Bottone</div>
+                </div>
+            </div>
+            <!----------------------------------------->
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

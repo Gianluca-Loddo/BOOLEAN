@@ -1,0 +1,60 @@
+Un array è una collezione ordinata di elementi, che possono essere numeri, stringhe, oggetti, altri array, ecc.
+
+
+let colori = ["rosso", "verde", "blu"];
+
+
+Qui abbiamo un array con 3 elementi: "rosso", "verde" e "blu".
+
+Gli array partono da indice 0:
+
+colori[0] → "rosso"
+
+colori[1] → "verde"
+
+colori[2] → "blu"
+
+
+
+
+Come si ciclano (for, forEach, for...of)
+
+
+✅ Metodo 1: for classico
+
+for (let i = 0; i < colori.length; i++) {
+  console.log(colori[i]);
+}
+
+Usa l’indice per accedere a ogni elemento.
+
+
+
+
+✅ Metodo 2: forEach (funzione moderna)
+
+colori.forEach(function(colore) {
+  console.log(colore);
+});
+
+Funziona bene per leggere ogni elemento. Non puoi usare break o continue.
+
+
+✅ Metodo 3: for...of (semplice e leggibile)
+
+for (let colore of colori) {
+  console.log(colore);
+}
+
+Perfetto per leggere ogni valore. Non ti serve sapere l’indice.
+
+
+✅ Metodo 4 (extra): for...in
+
+for (let indice in colori) {
+  console.log(indice, colori[indice]);
+}
+
+Legge gli indici (non i valori direttamente). Usato più spesso con oggetti, ma può funzionare anche con array.
+
+

@@ -1,0 +1,236 @@
+/* RESET DELLA PAGINA: il selettore universale(*) applica a tutti gli
+elementi della pagina. Il margin e il padding a 0 rimuovono i valori
+di default. La regola box-sizing dice al browser: "Quando imposti width o height,
+includi anche padding e bordi nel calcolo." */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f6f8f9;
+    /* colore di sfondo della pagina: grigino molto chiaro, quasi bianco */
+    font-family: 'Roboto', sans-serif;
+    /* specifica il tipo di carattere da utilizzare per tutta la pagina */
+    color: #333;
+    /* colore del testo generale */
+}
+
+/* HEADER */
+header {
+    background-color: #fff;
+    /* se non specifico il colore dell'header, eredita quello del body in quanto il colore di default è trasparente */
+    padding: 10px 10px;
+    /* padding: 10px sopra e sotto, 10px a destra e sinistra */
+}
+
+header img {
+    vertical-align: middle;
+    /* allinea l'immagine verticalmente al centro.
+    questa proprietà funziona solo su elementi inline o inline-block */
+}
+
+header h1 {
+    display: inline-block;
+    /* rende l'elemento h1 un elemento inline-block
+    in modo che possa essere allineato con l'immagine */
+    vertical-align: middle;
+    /* allinea il testo verticalmente al centro rispetto all'immagine */
+    margin-left: 10px;
+    /* spazio a sinistra rispetto all'immagine */
+    font-size: 40px;
+    /* dimensione del titolo */
+}
+
+/* CLASSE RIUTILIZZABILE PER I CONTENITORI CENTRATI */
+.box-container {
+    background-color: white;
+    /* colore di sfondo bianco */
+    width: 100%;
+    /* larghezza del contenitore: 100% del suo elemento padre (body) */
+    max-width: 800px;
+    /* larghezza massima del contenitore: 800px */
+    margin: 0 auto;
+    /* centrato orizzontalmente: margine 0 sopra e sotto e automatico a sinistra e destra.
+    affinchè la funzione auto funzioni deve essere specificato un valore di larghezza (width o max-width) */
+    padding: 20px 40px;
+    /* 20px sopra e sotto, 40px a destra e sinistra */
+}
+
+/* CONTENITORE BOTTONE IN ALTO */
+.topper_button_container {
+    margin-top: 50px;
+    /* margine superiore di 50px */
+    margin-bottom: 2px;
+    /* margine inferiore di 2px */
+    border-radius: 5px 5px 0 0;
+    /* arrotonda solo gli angoli superiori: sinistra e destra */
+    padding-bottom: 10px;
+    /* aggiunge spazio solo sotto il contenuto */
+}
+
+/* STILE DEL BOTTONE */
+.topper_button {
+    background-color: #47adf1;
+    /* colore di sfondo azzurro acceso */
+    color: white;
+    /* colore del testo bianco */
+    padding: 10px 20px;
+    /* spazio interno tra il contenuto (es: "Add Task") e il bordo del bottone */
+    border: solid 1px #47adf1;
+    /* bordo di 1px, solido, stesso colore del bottone */
+    /* rimuove il bordo predefinito che  i browser aggiungono ai bottoni.
+    Di solito quel bordo è grigio e ha uno stile "old-style".
+    Invece di inserire le specifiche si può usare "none" per il bordo, 
+    così il bottone è più moderno e si adatta meglio al design personalizzato*/
+    border-radius: 5px;
+    /* arrotonda gli angoli del bottone */
+    font-size: 16px;
+    /* dimensione del testo nel bottone */
+    cursor: pointer;
+    /* cambia il cursore in una mano quando si passa sopra il bottone */
+}
+
+.topper_button.invisible {
+    /* Applica lo stile solo agli elementi che hanno sia topper_button che invisible come classi */
+    background-color: transparent;
+    /* rende il bottone trasparente, ma mantiene lo spazio occupato */
+    color: #c5cbcf;
+    /* colore del testo grigio chiaro, visibile ma non evidente */
+    border: solid 1px currentColor;
+    /* bordo dello stesso colore del testo grazie a currentColor */
+}
+
+/* CONTENITORE DELLA LISTA */
+.todo_list_container {
+    margin-bottom: 2px;
+    /* margine inferiore di 2px per distanziarlo dal contenuto successivo */
+    border-radius: 0 0 5px 5px;
+    /* arrotonda solo gli angoli inferiori: sinistra e destra */
+}
+
+/* LISTA TASK */
+.todo_list {
+    list-style: none;
+    /* rimuove i punti elenco predefiniti della lista <ul> */
+}
+
+
+
+/* USO DELLA PSEUDOCLASSE :beefore */
+/* La pseudo-classe ::before in CSS è una pseudo-elemento che ti permette di inserire contenuto 
+prima del contenuto reale di un elemento HTML, senza dover modificare l’HTML stesso. 
+È molto usata per aggiungere elementi decorativi, icone, simboli, o testo automatico. */
+/*esempio: aggiunge un punto prima di ogni elemento della lista 
+
+.todo_list li::before {
+    content: "•";
+    inserisce un punto prima di ogni elemento della lista 
+    color: #47adf1;
+    colore del punto: azzurro acceso 
+    font-size: 20px;
+    dimensione del punto 
+    margin-right: 10px;
+    spazio a destra del punto per distanziarlo dal testo 
+} 
+    */
+
+
+
+.completed::before {
+    content: '\2713';
+    /*quando si usa content in CSS (es. con ::before o ::after), il carattere va scritto con \ seguito dal codice esadecimale a 4 cifre o più, senza U+*/
+    border: 2px solid #98d8cb;
+    /* bordo verde chiaro - il cerchio */
+    color: #98d8cb;
+    /* il colore del testo del segno di spunta */
+    font-weight: bold;
+    /* rende il segno di spunta più spesso */
+    display: inline-block;
+    /* rende l'elemento un blocco inline, permettendo di specificare larghezza e altezza, 
+    nb gli elementi inline non possono avere larghezza e altezza specificate */
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    /* rende l'elemento un cerchio */
+    text-align: center;
+    /* allinea il testo al centro del cerchio */
+    line-height: 16px;
+    /* allinea verticalmente il testo al centro del cerchio */
+    /* il valore di line-height deve essere uguale all'altezza dell'elemento per centrare verticalmente il testo */
+    font-size: 10px;
+    /* dimensione del testo del segno di spunta */
+    margin: 8px 8px 8px 0;
+    /* margine: 8px sopra, 8px a destra, 8px sotto, 0 a sinistra */
+    vertical-align: middle;
+    /* allinea verticalmente l'elemento al centro rispetto agli altri elementi inline */
+}
+
+.not_completed::before {
+    content: '\2717';
+    border: 2px solid #ff1010;
+    color: #ff1010;
+    font-weight: bold;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 16px;
+    font-size: 10px;
+    margin: 8px 8px 8px 0;
+    vertical-align: middle;
+}
+
+
+.category {
+    text-align: center;
+    /* allinea il testo al centro */
+    border-radius: 30px;
+    /* arrotonda gli angoli del bottone */
+    width: 60px;
+    /* larghezza del bottone */
+    height: 20px;
+    /* altezza del bottone */
+    font-size: 9px;
+    /* dimensione del testo del bottone */
+    margin-left: 5px;
+    /* margine a sinistra del bottone */
+    vertical-align: middle;
+    /* allinea verticalmente il bottone al centro rispetto agli altri elementi inline */
+    color: white;
+    /* colore del testo del bottone */
+    border: none;
+    /* rimuove il bordo predefinito del bottone */
+}
+
+/* In HTML, un elemento <button> è nativamente un elemento inline-block.
+Quindi, non è necessario specificare display: inline-block; per i bottoni. 
+Funziona anche senza all: unset (togliere tutte le impostazioni di base del bottone)
+in quanto tutti gli stili visibili (colore, bordo, dimensioni, testo…) sono già stati sovrascritti*/
+
+
+.editorial {
+    background-color: rgb(85, 159, 244);
+}
+
+.q1-goals {
+    background-color: rgb(159, 107, 223);
+}
+
+.recruiting {
+    background-color: rgb(70, 194, 142);
+}
+
+.mobile {
+    background-color: rgb(233, 137, 35);
+}
+
+.website {
+    background-color: rgb(195, 78, 152);
+}
+
+.sales {
+    background-color: rgb(149, 188, 91);
+}

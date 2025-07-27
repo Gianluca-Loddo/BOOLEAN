@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+    /* include padding e bordo nella misura */
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+    max-width: 600px;
+    margin: 2rem auto;
+    /* centra il contenitore orizzontalmente: margine sopra e sotto automatici */
+}
+
+.container img {
+    max-width: 250px;
+    height: auto;
+    /* mantiene le proporzioni: l’altezza si adatta automaticamente alla larghezza, così la foto non si deforma */
+    object-fit: cover;
+    /* adatta l'immagine al contenitore  !!!! (opzionale)
+                          L’immagine riempie completamente il contenitore. Taglia i bordi se necessario.
+                          Non lascia spazi vuoti. */
+}
+
+.card {
+    display: flex;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* aggiungi un'ombra leggera: spostamento orizzontale, spostamento verticale, spostamento verticale, colore nero, trasparente al 90%  */
+}
+
+.description {
+   padding: 1rem;
+   /* padding interno per distanziare il testo dai bordi della card */  
+}
+
+.card-footer {
+    margin-top: 1rem;
+    /* margine superiore per distanziare il footer dalla descrizione 
+    rem significa "root em", cioè una unità di misura relativa che 
+                         si basa sulla dimensione del font dell’elemento radice della pagina, cioè dell’<html>.*/
+    display: flex;
+    gap: 0.5rem;
+    /* spazio tra gli elementi del footer (i "bottoni" con le proprietà: footer-item) */
+    /* gap è una proprietà di Flexbox che definisce lo spazio tra gli elementi flessibili. */
+    flex-wrap: wrap;
+    /*Se gli elementi non ci stanno più su una riga, vai pure a capo. Falli andare su più righe. 
+    di defaulti è NOWRAP*/
+}
+
+.card-footer-item {
+    background-color: #f0f0f0;
+    color: #333;
+    font-weight: bold;
+    padding: 0.3rem 0.6rem; /*sopra e sotto, sinistra e destra*/
+    border-radius: 8px;
+    /* più piccolo */
+    font-size: 0.85rem;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+    white-space: nowrap;
+    /* impedisce il ritorno a capo */
+    /* è una proprietà non specifica di Flexbox, 
+    usata per gestire la gestione degli spazi 
+    e delle interruzioni di riga nel testo.*/
+}
+
+
+.card-footer-item:hover {
+    /* cambia il colore di sfondo al passaggio del mouse */
+    /* hover è un selettore che applica uno stile quando il mouse passa sopra l'elemento */
+    background-color: #e0e0e0;
+    cursor: pointer;
+    /* cambia il puntatore al passaggio del mouse (manina) */
+}
+
+
+.ohana {
+    margin-top: 1rem;
+    color: #4a90e2;
+    /* azzurro stitch */
+    font-weight: bold;
+    font-size: 1rem;
+    display: inline-block; /* rende l'elemento un blocco in linea,
+                            così si comporta come un elemento in linea ma può avere margini e padding */
+}
+
+.subtitle {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #5c2d91;
+    /* viola intenso */
+    margin-bottom: 0.4rem;
+}

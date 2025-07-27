@@ -1,0 +1,146 @@
+/*imposto lo stile dell'header - non ha bisogno di essere richiamato con il punto . o il cancelletto #*/
+header {
+    background-color: #4ea0ff;
+    /* il colore l'ho ottenuto analizzando l'immagine con un'estensione di Chrome ColorZilla */
+    background-image: url(../img/pattern.png);
+    /*si usa url per inserire il percorso dell'immagine*/
+    background-size: 29%;
+    /*di default, se non viene specificato, l'immagine si ripete e specificando la percentuale aumentiamo o riduciamo la dimensione*/
+}
+
+/* per impostare lo stile dell'ID logo ho dovuto richiamare lo stesso usando il cancelletto prima del nome #*/
+#logo {
+    width: 200px;
+    /*specificando solo la larghezza automanticamente si ridimensiona anche l'altezza*/
+    padding-top: 40px;
+    /*distanza dall'alto misurata con PixelRuler di PowerToys Windows*/
+    padding-left: 8px;
+    /*distanza da sinistra*/
+}
+
+h1 {
+    margin-bottom: 0px;
+    /*sto togliendo lo spazio sotto*/
+    line-height: 1.0;
+    /*interlinea andando a capo*/
+
+}
+
+.info-autore {
+    margin-top: 2px;
+    /*sto gestendo lo spazio sopra con h1*/
+    color: rgb(139, 139, 139);
+    font-weight: bold;
+    /*grassetto*/
+    font-size: 14px;
+    line-height: 0.9;
+    /*interlinea con info-autore-data*/
+}
+
+.info-autore-data {
+    font-weight: normal;
+    /*rimozione grassetto ereditato da info-autore*/
+    font-size: 10px;
+}
+
+#immagini img {
+    /*se non aggiungessi IMG starei impostando l’height sul contenitore #immagini, non sulle immagini vere e proprie. Questo non modifica l’altezza delle immagini, ma solo quella del div che le contiene*/
+    height: 220px;
+    /*imposto l'altezza delle immagini e automaticamente si adatterà la larghezza*/
+}
+
+#didascalia-immagini {
+    font-size: 10px;
+}
+
+.testo-evidenziato {
+    background-color: yellow;
+}
+
+ul {
+    padding-left: 16px;
+    /* i pallini non fanno parte del contenuto del <li>, ma sono un elemento di stile visuale posizionato all’esterno
+   Il contenuto del <li> parte dal bordo sinistro, impostando padding 0 Il pallino è ancora fuori dal contenuto, ma...
+   ... non ha più spazio per essere visualizzato!*/
+}
+
+table {
+    border-collapse: collapse;
+    /*per evitare che le celle della tabella abbiano uno spazio tra di loro*/
+    text-align: left;
+    /*imposto l'allineamento del testo a sinistra*/
+}
+
+th:first-child,
+/*prende il primo <th> (intestazione) di ogni riga.*/
+td:first-child,
+/*prende il primo <td> (cella) di ogni riga del corpo.*/
+th:nth-child(2),
+/*prende il secondo <th> di ogni riga.*/
+td:nth-child(2)
+
+/*prende il secondo <td> di ogni riga.*/
+    {
+    width: 20%;
+    /*imposto la larghezza della prima e della seconda colonna della tabella AL 20% OGNUNA della larghezza totale rispetto al contenitore - Article*/
+}
+
+
+.head_table {
+    background-color: #20a9e5;
+    /*imposto il colore di sfondo della tabella*/
+    color: white;
+    /*imposto il colore del testo della tabella*/
+    font-weight: bold;
+    /*imposto il grassetto del testo della tabella*/
+}
+
+.riga_azzurra {
+    background-color: #b1e5f2;
+    /*imposto il colore di sfondo della riga azzurra*/
+}
+
+h4 {
+    color: rgb(139, 139, 139);
+    font-weight: bold;
+    /*grassetto*/
+    margin-bottom: 10px;
+    /*sto impostando lo spazio sotto*/
+}
+
+#Foto_Monitor_1 {
+    /*sto impostando lo stile per Foto_Monitor_1*/
+    background-image: url(../img/monitor.jpg);
+    background-size: cover;
+    width: 300px;
+    /*larghezza del div*/
+    height: 200px;
+    /*altezza del div*/
+    color: white;
+    /*colore del testo all'interno del div*/
+    font-weight: bold;
+    /*grassetto del testo all'interno del div*/
+    padding-left: 12px;
+    /* sposta il testo verso destra */
+    padding-top: 12px;
+    /* sposta il testo verso il basso della stessa distanza */
+
+}
+
+#Foto_Monitor_2 {
+    /*sto impostando lo stile per Foto_Monitor_2*/
+    background-image: url(../img/graph.jpg);
+    background-size: cover;
+    width: 300px;
+    /*larghezza del div*/
+    height: 200px;
+    /*altezza del div*/
+    color: white;
+    /*colore del testo all'interno del div*/
+    font-weight: bold;
+    /*grassetto del testo all'interno del div*/
+    padding-left: 12px;
+    /* sposta il testo verso destra */
+    padding-top: 12px;
+    /* sposta il testo verso il basso della stessa distanza */
+}

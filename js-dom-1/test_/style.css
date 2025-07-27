@@ -1,0 +1,30 @@
+* {
+    /*reset impostazioni di default*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    align-items: end;
+}
+
+#white_lamp {
+    max-width: 100%;
+    width: 270px;
+    height: 360px;
+
+}
+
+#yellow_lamp {
+    display: none;
+    max-width: 100%;
+    width: 270px;
+    height: 360px;
+}
+
+#accendi {
+    padding: 5px;
+    cursor: pointer;
+}

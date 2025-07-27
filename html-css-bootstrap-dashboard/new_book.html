@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuovo Libro</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid px-5">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="img/duck.png" class="logo-img me-2" alt="Logo" style="height: 30px;">
+        Catalogo Libri
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#">Anagrafica Utenti</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Storico Prestiti</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
+        </ul>
+        <form class="d-flex mt-3 mt-lg-0">
+          <input class="form-control me-2" type="search" placeholder="Cerca..." aria-label="Cerca">
+          <button class="btn btn-outline-light" type="submit">Cerca</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- FORM NUOVO LIBRO -->
+  <div class="container my-5">
+    <h1 class="mb-4">Nuovo Libro</h1>
+    <form>
+
+      <!-- Nome e Cognome Autore -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="nome-autore" class="form-label">Nome Autore</label>
+          <input type="text" class="form-control" id="nome-autore" placeholder="Inserisci il nome dell'autore">
+        </div>
+        <div class="col-md-6">
+          <label for="cognome-autore" class="form-label">Cognome Autore</label>
+          <input type="text" class="form-control" id="cognome-autore" placeholder="Inserisci il cognome dell'autore">
+        </div>
+      </div>
+
+      <!-- Titolo -->
+      <div class="mb-3">
+        <label for="titolo" class="form-label">Titolo</label>
+        <input type="text" class="form-control" id="titolo" placeholder="Inserisci il titolo del libro">
+        <div class="form-text">Titolo versione italiana</div>
+      </div>
+
+      <!-- Genere, Anno, ISBN -->
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label for="genere" class="form-label">Genere</label>
+          <select class="form-select" id="genere">
+            <option selected>Scegli il genere</option>
+            <option value="1">Romanzo</option>
+            <option value="2">Saggio</option>
+            <option value="3">Biografia</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="anno" class="form-label">Anno di Pubblicazione</label>
+          <input type="number" class="form-control" id="anno" placeholder="Inserisci l'anno">
+        </div>
+        <div class="col-md-4">
+          <label for="isbn" class="form-label">ISBN#</label>
+          <input type="text" class="form-control" id="isbn" placeholder="Inserisci il codice ISBN#">
+        </div>
+      </div>
+
+      <!-- Note -->
+      <div class="mb-3">
+        <label for="note" class="form-label">Note</label>
+        <textarea class="form-control" id="note" rows="4" placeholder="Inserisci eventuali note sul libro"></textarea>
+      </div>
+
+      <!-- Checkbox -->
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="digitale">
+        <label class="form-check-label" for="digitale">
+          Disponibile anche in digitale
+        </label>
+      </div>
+
+      <!-- Pulsante -->
+      <button type="submit" class="btn btn-primary">Aggiungi Libro</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

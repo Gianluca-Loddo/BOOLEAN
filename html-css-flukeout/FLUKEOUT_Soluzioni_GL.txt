@@ -1,0 +1,655 @@
+SELETTORI FLUKEOUT (Soluzioni e Spiegazioni)
+Gianluca Loddo
+-------------------------------------------------------
+
+LIVELLO 1
+-------------------------------------------------------
+✅ Soluzione:
+plate
+
+📘 Spiegazione elementare:
+Scrivendo semplicemente plate diciamo al browser: "Seleziona tutti gli elementi HTML che si chiamano <plate>". È come dire "tutti i piatti!"
+🔧 Come funziona:
+In questo livello ci sono due elementi <plate /> dentro un <div>. Questi elementi hanno come tipo plate, quindi possiamo selezionarli usando un type selector, 
+ovvero semplicemente scrivendo il nome del tag.
+🟢 Risultato:
+Entrambi i piatti vengono selezionati correttamente, perché sono entrambi elementi <plate> nel codice HTML.
+
+LIVELLO 2
+-------------------------------------------------------
+✅ Soluzione:
+bento
+
+📘 Spiegazione elementare:
+Scriviamo bento per dire al browser: "Seleziona tutti gli elementi chiamati <bento>". È il modo più diretto per prendere tutte le bento box presenti nella pagina.
+🔧 Come funziona:
+Nel codice HTML ci sono due elementi <bento /> e un <plate />, tutti figli diretti di un <div>. 
+Il type selector bento seleziona tutti e soli gli elementi con quel nome di tag. Non serve aggiungere classi o ID, perché il nome del tag è già univoco.
+🟢 Risultato:
+Vengono selezionate entrambe le bento box (una a sinistra e una a destra), mentre il piatto centrale non viene selezionato. 
+
+LIVELLO 3
+-------------------------------------------------------
+✅ Soluzione:
+#fancy
+
+📘 Spiegazione elementare:
+Usiamo il simbolo # per dire: "Voglio l'elemento che ha id="fancy"". Gli ID sono unici, quindi questo selezionerà un solo piatto: quello elegante con il bordo blu.
+🔧 Come funziona:
+Nel codice HTML, il primo elemento <plate /> ha un attributo id="fancy". 
+Gli ID selector in CSS si scrivono con # seguito dal nome dell'ID (#fancy). 
+Questo selettore ignora gli altri <plate /> o <bento />, anche se dello stesso tipo, perché cerca esattamente quell'ID.
+🟢 Risultato:
+Viene selezionato solo il piatto con l'ID fancy (quello a sinistra, con il bordo blu). Gli altri elementi non vengono toccati.
+
+LIVELLO 4
+-------------------------------------------------------
+✅ Soluzione:
+plate apple
+
+📘 Spiegazione elementare:
+Scriviamo plate apple per dire: "Voglio selezionare le mele che si trovano sopra un piatto". È come dire “mele dentro un contenitore di tipo piatto”.
+🔧 Come funziona:
+Il selettore plate apple è un descendant selector, cioè seleziona tutti gli elementi <apple> che si trovano dentro (nidificati in qualsiasi profondità) un elemento <plate>.
+Nel codice ci sono due <apple>: uno dentro un <plate>, uno fuori. Questo selettore prende solo quello dentro.
+🟢 Risultato:
+Viene selezionata solo la mela che si trova sopra il piatto al centro, mentre quella fuori (a destra) non viene toccata.
+
+LIVELLO 5
+-------------------------------------------------------
+✅ Soluzione:
+#fancy pickle
+
+📘 Spiegazione elementare:
+Usiamo #fancy pickle per dire: "Voglio selezionare il pickle che si trova sul piatto con l’ID fancy". Solo quel cetriolino verde, non gli altri!
+🔧 Come funziona:
+Il selettore #fancy prende il piatto con id="fancy", e il selettore pickle dopo uno spazio seleziona tutti i pickle discendenti (cioè contenuti all’interno) di quell’elemento.
+Questo è un esempio di combinazione tra ID selector e descendant selector.
+🟢 Risultato:
+Viene selezionato solo il pickle sul piatto blu con ID fancy, mentre l’altro pickle (sul piatto normale) non viene selezionato.
+
+LIVELLO 6
+-------------------------------------------------------
+✅ Soluzione:
+.small
+
+📘 Spiegazione elementare:
+Usiamo il punto (.) davanti al nome della classe per dire: "Voglio selezionare tutti gli elementi con classe small". È come chiedere: “Mostrami tutte le mele piccole!”
+🔧 Come funziona:
+Nel codice HTML ci sono tre <apple>:
+uno normale (senza classe),
+due con class="small" (uno fuori dai piatti e uno dentro un piatto).
+Il selettore .small prende tutti gli elementi con quella classe, indipendentemente dal tag o dalla posizione.
+🟢 Risultato:
+Vengono selezionate entrambe le mele piccole, sia quella fuori che quella dentro il piatto. La mela grande a sinistra non viene selezionata.
+
+LIVELLO 7
+-------------------------------------------------------
+✅ Soluzione:
+orange.small
+📘 Spiegazione elementare:
+Scrivendo orange.small diciamo: "Seleziona solo gli elementi arancia (orange) che hanno anche la classe small". Non tutte le arance, solo quelle piccole!
+🔧 Come funziona:
+Nel codice ci sono tre <orange>:
+Uno normale (senza classe),
+Due con class="small".
+Il selettore orange.small combina il type selector (orange) con il class selector (.small), e funziona solo se entrambi i criteri sono veri. Quindi prende solo le arance che sono piccole.
+🟢 Risultato:
+Vengono selezionate due arance piccole: una nel bento (sinistra) e una sul piatto (destra). L’arancia normale (al centro) non viene selezionata.
+
+Approfondimento:
+✅ In CSS (come selettore)
+----------------------------------------------------------------
+
+   orange small		<orange><small>...</small></orange>
+  -------------- 	-----------------------------------
+Selettore discendente.
+Seleziona tutti gli elementi <small> dentro un elemento <orange>.
+
+orange small {
+  color: red;
+}
+
+📍 Questo colora di rosso tutti i <small> interni a un <orange>.
+----------------------------------------------------------------
+
+   orange.small		<orange class="small"></orange>
+  -------------- 	------------------------------- 
+Selettore con classe.
+Seleziona solo gli elementi <orange> che hanno classe small.
+
+orange.small {
+  color: red;
+}
+
+📍 Questo colora di rosso solo il tag <orange class="small">.
+
+----------------------------------------------------------------------------------------------
+| Scrittura      | Significato                       | Esempio HTML corrispondente           |
+| -------------- | --------------------------------- | ------------------------------------- |
+| `orange small` | `<small>` **dentro** `<orange>`   | `<orange><small>...</small></orange>` |
+| `orange.small` | `<orange>` con **classe `small`** | `<orange class="small"></orange>`     |
+----------------------------------------------------------------------------------------------
+
+LIVELLO 8
+-------------------------------------------------------
+✅ Soluzione:
+bento orange.small
+
+📘 Spiegazione elementare:
+Con bento orange.small stiamo dicendo: "Seleziona solo le arance piccole (.small) che si trovano dentro un contenitore bento".
+🔧 Come funziona:
+Questo selettore combina:
+un type selector (bento) per cercare tutti i contenitori bento,
+un descendant selector (spazio) per cercare dentro quei bento,
+e un selector combinato orange.small per prendere solo le arance con la classe small.
+Nel codice HTML ci sono 5 <bento>:
+Uno con arancia normale (non presa),
+Tre con arancia piccola (presi),
+Uno con mela piccola (non presa).
+🟢 Risultato:
+Vengono selezionate solo le tre arance piccole che si trovano dentro un bento. Le altre (mela piccola o arancia normale) non vengono selezionate.
+
+LIVELLO 9
+-------------------------------------------------------
+✅ Soluzione:
+plate, bento
+
+📘 Spiegazione elementare:
+Mettiamo una virgola tra i selettori per dire: "Seleziona sia tutti i piatti (plate) che tutti i contenitori bento (bento)". 
+È un modo per unire più tipi di elementi nella stessa regola.
+🔧 Come funziona:
+In CSS, il comma combinator (,) permette di combinare più selettori separati. 
+Ogni selettore funziona in modo indipendente e viene applicato a sé. In questo caso:
+plate seleziona tutti gli elementi <plate>,
+bento seleziona tutti gli elementi <bento>.
+Il risultato è l’unione di entrambi.
+🟢 Risultato:
+Vengono selezionati tutti i piatti e tutti i bento presenti sulla tavola. Gli altri elementi (come i cetriolini/pickle) non vengono selezionati.
+
+LIVELLO 10
+-------------------------------------------------------
+✅ Soluzione:
+*
+📘 Spiegazione elementare:
+Il simbolo * in CSS significa: "Seleziona tutti gli elementi della pagina". È il modo più semplice per dire: “Prendili tutti, nessuno escluso!”
+🔧 Come funziona:
+Il selettore * è chiamato universal selector.
+Non ha bisogno di nomi di tag, classi o ID: prende qualsiasi elemento HTML presente, indipendentemente dal tipo, posizione o attributi.
+🟢 Risultato:
+Vengono selezionati tutti gli elementi sulla tavola: mele, arance, piatti, bentos, tutto! Nessun elemento rimane escluso.
+
+LIVELLO 11
+-------------------------------------------------------
+✅ Soluzione:
+plate *
+📘 Spiegazione elementare:
+Scriviamo plate * per dire: "Seleziona tutti gli elementi che si trovano dentro un piatto". Il simbolo * vuol dire "qualsiasi cosa".
+🔧 Come funziona:
+Questo è un descendant selector combinato con il universal selector *.
+plate seleziona ogni elemento <plate>,
+* dopo lo spazio seleziona qualsiasi cosa che si trovi al suo interno (discendenti di ogni tipo: orange, pickle, apple, ecc.).
+🟢 Risultato:
+Vengono selezionati tutti gli elementi contenuti dentro un piatto, ovvero:
+l’arancia piccola nel primo piatto,
+il cetriolo nel secondo,
+la mela nel terzo.
+La mela piccola fuori dal piatto non viene selezionata.
+
+LIVELLO 12 => USO DEL SELETTORE "+"
+-------------------------------------------------------
+✅ Soluzione:
+plate + apple
+
+📘 Spiegazione elementare:
+Con plate + apple diciamo: "Seleziona ogni mela (apple) che si trova subito dopo un piatto (plate)". Solo le mele che vengono immediatamente dopo, non tutte.
+🔧 Come funziona:
+Il simbolo + è un adjacent sibling selector: seleziona l’elemento B che si trova subito dopo l’elemento A, allo stesso livello (cioè “fratelli” nel DOM).
+In questo caso, seleziona ogni <apple> che è sorella immediatamente successiva di un <plate>.
+Nel codice:
+Il primo <plate> è seguito da una mela piccola → ✔️ selezionata
+Il secondo <plate> è seguito da una mela grande → ✔️ selezionata
+Le altre mele non seguono direttamente un piatto → ❌ non selezionate
+🟢 Risultato:
+Vengono selezionate le due mele che stanno subito dopo i piatti. Le mele prima, o che non sono immediatamente accanto a un piatto, non vengono selezionate.
+
+LIVELLO 13 => USO DI "~" (FRATELLI ALLO STESSO LIVELLO)
+-------------------------------------------------------
+✅ Soluzione:
+bento ~ pickle
+
+📘 Spiegazione elementare:
+Con bento ~ pickle si sta dicendo: "Seleziona tutti i cetriolini (pickle) che si trovano dopo un bento, sullo stesso livello (fratelli)".
+🔧 Come funziona:
+Il selettore ~ è chiamato general sibling selector:
+A ~ B seleziona tutti gli elementi B che sono fratelli di A e che vengono dopo A, anche se non immediatamente.
+In questo caso, si cerca ogni pickle che segue un bento.
+Nel codice:
+Il primo pickle viene prima del bento → ❌ non selezionato
+Tutti gli altri pickle seguono il bento → ✔️ selezionati
+🟢 Risultato:
+Vengono selezionati tutti i cetriolini che si trovano dopo il bento, indipendentemente dalla distanza o da altri elementi in mezzo.
+
+Approfondimento:
+✅ COS'è UN "FRATELLO" (SIBLING) IN HTML
+----------------------------------------------------------------
+!!! Regola chiave !!!
+Due elementi sono fratelli solo se stanno alla stessa profondità nella struttura HTML, cioè dentro lo stesso contenitore diretto (genitore).
+
+Ripetendo: in HTML, due elementi sono fratelli (siblings) se sono contenuti nello stesso genitore.
+Proprio come due fratelli nella stessa famiglia.
+
+📦 Esempio base:
+<div>
+  <h1>Benvenuto</h1>
+  <p>Questo è un paragrafo.</p>
+  <p>Questo è un altro paragrafo.</p>
+</div>
+
+In questo caso:
+<h1>, <p>, e <p> sono tutti fratelli perché hanno lo stesso genitore: il <div>
+
+✅ Fratelli (sibling)
+<div>
+  <bento></bento>       ← fratello
+  <pickle></pickle>     ← fratello successivo
+</div>
+
+Qui si può usare il selettore: bento ~ pickle
+che prende tutti i <pickle> dopo il <bento> nello stesso <div>.
+
+❌ Non fratelli (non si può usare ~)
+<div>
+  <bento>
+    <pickle></pickle>  ← questo è **dentro** il bento, non fratello!
+  </bento>
+  <pickle></pickle>     ← questo sì, è un fratello
+</div>
+
+In questo caso:
+Il primo <pickle> è figlio del <bento> → ❌ non è fratello
+Il secondo <pickle> invece è fratello del bento → ✅ valido
+
+LIVELLO 14 => USO DI ">" (FIGLI DIRETTI)
+-------------------------------------------------------
+✅ Soluzione:
+plate > apple
+
+📘 Spiegazione elementare:
+Con plate > apple si sta dicendo: "Seleziona ogni mela (apple) che è figlia diretta di un piatto (plate)", 
+cioè si trova immediatamente al suo interno, senza altri contenitori nel mezzo.
+🔧 Come funziona:
+Il simbolo > è il child selector e serve a selezionare solo gli elementi figli diretti (e non nipoti o discendenti generici).
+Il selettore A > B significa: seleziona gli elementi B che sono figli diretti di A.
+Nel codice:
+La prima mela è dentro un <bento> che è dentro un <plate> → ❌ non selezionata (non figlia diretta)
+La seconda mela è direttamente dentro un <plate> → ✔️ selezionata
+Le altre mele sono fuori da qualsiasi piatto → ❌ non selezionate
+🟢 Risultato:
+Viene selezionata solo la mela che si trova direttamente sopra un piatto, senza contenitori intermedi. 
+Le mele dentro altri contenitori o fuori dai piatti non vengono selezionate.
+
+Approfondimento:
+✅ HTML + CSS (FIGLIO DIRETTO ">")
+----------------------------------------------------------------
+DIFFERENZE TRA FIGLIO DIRETTO ">" E "DISCENDENTE" (qualsiasi livello di nidificazione, con spazio)
+
+📄 Esempio HTML
+<div class="piatto">
+  <apple></apple> <!-- ✅ Figlio diretto del div -->
+  
+  <bento>
+    <apple></apple> <!-- ❌ NON è figlio diretto del div, ma nipote -->
+  </bento>
+</div>
+----------------------------------------------------------------------
+✅ Selettore figlio diretto (>)
+.piatto > apple {
+  background: green;
+}
+🔹 Questo selettore colora solo l’elemento <apple> che è figlio diretto di .piatto
+🔸 NON colora la mela dentro il <bento>.
+----------------------------------------------------------------------
+⚠️ Selettore discendente (<spazio>)
+.piatto apple {
+  background: red;
+}
+🔹 Questo selettore colora tutte le mele dentro .piatto, a qualsiasi profondità
+🔸 Quindi colora sia la mela fuori che quella dentro il bento.
+----------------------------------------------------------------------
+| Selettore | Cosa prende                          | Esempio         |
+| --------- | ------------------------------------ | --------------- |
+| `A > B`   | Solo i figli diretti                 | `plate > apple` |
+| `A B`     | Tutti i discendenti (figli, nipoti…) | `plate apple`   |
+----------------------------------------------------------------------
+
+LIVELLO 15 => USO DI ":FIRST-CHILD" (PRIMO FIGLIO)
+-------------------------------------------------------
+✅ Soluzione:
+plate orange:first-child
+
+📘 Spiegazione elementare:
+Con plate orange:first-child si sta dicendo: "Seleziona la prima arancia (orange) che si trova dentro un piatto (plate)". 
+In pratica, si vuole prendere l’arancia in cima alla pila.
+🔧 Come funziona:
+Il selettore :first-child prende solo il primo figlio di un contenitore.
+In questo caso:
+plate seleziona i piatti,
+orange:first-child prende solo l’arancia che è il primo elemento dentro il piatto.
+Nel codice:
+Il secondo <plate> contiene tre arance.
+Solo la prima arancia è selezionata, le altre no.
+🟢 Risultato:
+Viene selezionata solo l’arancia più in alto tra le tre impilate sul piatto a destra. Le altre due non vengono selezionate.
+
+Approfondimento:
+✅ SELETTORE :first-child
+----------------------------------------------------------------
+Il selettore :first-child seleziona un elemento solo se è il primo figlio del proprio genitore.
+
+🔍 Esempio 1 — Funziona ✅
+<div>
+  <orange></orange>   <!-- ✅ Primo figlio -->
+  <orange></orange>
+</div>
+
+orange:first-child {
+  border: 2px solid red;
+}
+✅ Il primo <orange> viene selezionato e stilizzato, perché è il primo figlio del <div>.
+==============================
+🚫 Esempio 2 — Non funziona ❌
+<div>
+  <plate></plate>
+  <orange></orange>   <!-- ❌ NON è primo figlio (c'è il plate prima) -->
+</div>
+
+orange:first-child {
+  border: 2px solid red;
+}
+❌ Il <orange> non viene selezionato perché è il secondo figlio (il primo è <plate>).
+==============================
+
+🥇 Come combinarlo bene
+Es. Qualora si volesse selezionare solo l’arancia prima figlia di un piatto, si dovrebbe scrivere:
+plate > orange:first-child
+Questo:
+prende solo arance (orange) che sono figlie dirette di un piatto (plate >) e sono il primo figlio di quel piatto (:first-child)
+
+📄 Esempio completo e funzionante:
+<plate>
+  <orange></orange>     <!-- ✅ selezionato -->
+  <orange></orange>     <!-- ❌ ignorato -->
+</plate>
+
+<plate>
+  <pickle></pickle>
+  <orange></orange>     <!-- ❌ NON è primo figlio -->
+</plate>
+
+--
+plate > orange:first-child {
+  background: orange;
+}
+🔹 Risultato: solo la prima arancia nel primo piatto viene selezionata.
+----------------------------------------------------------------
+
+LIVELLO 16 => USO DI ":ONLY-CHILD" (UNICO FIGLIO)
+-------------------------------------------------------
+✅ Soluzione:
+plate :only-child
+
+📘 Spiegazione elementare:
+Con plate :only-child si sta dicendo: "Seleziona l’unico elemento presente dentro ogni piatto (plate)". 
+In questo caso:
+Se in un piatto c’è solo una mela, verrà selezionata.
+Se c’è solo un cetriolino, anche quello sarà selezionato.
+🔧 Come funziona:
+Il pseudo-selettore :only-child seleziona un elemento che è l’unico figlio del suo genitore.
+plate :only-child 
+significa: qualsiasi elemento (non importa che tipo) che sia l’unico figlio dentro un <plate>.
+Nel codice:
+Il primo piatto contiene solo una mela → ✔️ selezionata
+Il secondo piatto contiene solo un pickle → ✔️ selezionato
+Il quarto piatto contiene due arance → ❌ nessuna selezionata (non sono figli unici)
+🟢 Risultato:
+Vengono selezionati la mela e il cetriolino che si trovano da soli nei rispettivi piatti.
+
+LIVELLO 17 => USO DI ":LAST-CHILD" (ULTIMO FIGLIO)
+-------------------------------------------------------
+✅ Soluzione:
+.small:last-child
+
+📘 Spiegazione elementare:
+Si sta dicendo: "Seleziona tutti gli elementi con classe small che sono anche l’ultimo figlio dentro il loro contenitore".
+🔧 Come funziona:
+.small seleziona tutti gli elementi che hanno la classe small
+:last-child restringe la selezione solo a quelli che sono l’ultimo figlio del loro genitore
+Nel codice:
+L’apple small nel primo piatto è l’unico figlio → è anche l’ultimo → ✔️ selezionato
+La seconda orange nel terzo piatto è l’ultima, ma non ha la classe small → ❌
+Il pickle small in fondo è l’ultimo figlio della tavola e ha la classe small → ✔️
+🟢 Risultato:
+Vengono selezionati:
+La mela piccola nel primo piatto
+Il cetriolo piccolo in fondo al tavolo
+
+Approfondimento:
+✅ SELETTORE :last-child e :last-of-type
+----------------------------------------------------------------
+🧪 ESEMPIO BASE: uso di :last-child
+
+🔧 HTML
+<ul>
+  <li>Mela</li>
+  <li>Banana</li>
+  <li>Pera</li> <!-- Questo è il last-child -->
+</ul>
+✅ CSS con :last-child
+li:last-child {
+  color: red;
+}
+🟢 Questo colora solo l’ultimo <li> della lista (cioè "Pera").
+
+⚠️ ATTENZIONE: non è "ultimo elemento del tipo", ma ultimo figlio in assoluto!
+❌ Esempio di errore comune:
+<div>
+  <p>Paragrafo 1</p>
+  <p>Paragrafo 2</p>
+  <span>Ultimo elemento</span>
+</div>
+
+p:last-child {
+  color: blue;
+}
+🔴 NON funziona, perché il secondo <p> non è l’ultimo figlio del <div> (c’è ancora uno <span> dopo).
+==============================
+
+✅ Alternativa: :last-of-type
+Se si volesse selezionare l’ultimo <p> tra tutti i paragrafi, indipendentemente da cosa c'è dopo:
+p:last-of-type {
+  color: blue;
+}
+
+==============================
+🧠 Differenze tra :last-child e :last-of-type
+-----------------------------------------------------------------------------------
+| Selettore       | Significato                                                   |
+| --------------- | ------------------------------------------------------------- |
+| `:last-child`   | L'ultimo figlio **in assoluto** di un genitore                |
+| `:last-of-type` | L'ultimo elemento **di quel tipo** tra i figli di un genitore |
+-----------------------------------------------------------------------------------
+
+LIVELLO 18 => USO DI ":NTH-CHILD( )" (Fratello/Figlio NUMERO "X")
+-------------------------------------------------------
+✅ Soluzione:
+plate:nth-child(3)
+
+📘 Spiegazione elementare:
+Si sta dicendo al browser: “Seleziona il terzo elemento plate (piatto) nella lista dei figli del contenitore”.
+🔧 Come funziona:
+plate è il tipo di elemento che vogliamo selezionare (in questo caso un <plate />)
+:nth-child(3) prende solo il terzo figlio all’interno del contenitore, non il terzo plate in assoluto, ma il terzo elemento a prescindere dal tipo
+In questo livello, tutti i figli sono <plate />, quindi non ci sono interferenze
+🟢 Risultato:
+Viene selezionato solo il terzo piatto da sinistra (quello con il bordo blu, evidenziato nel gioco).
+
+Approfondimento:
+✅ SELETTORE :nth-child() e :nth-of-type()
+----------------------------------------------------------------
+Il selettore :nth-child() è uno dei più potenti in CSS, perché permette di selezionare elementi in base alla loro posizione fra i fratelli, in modo preciso o ricorrente.
+
+✅ Sintassi base
+selettore:nth-child(n)
+Seleziona l’elemento che è il n-esimo figlio del suo genitore.
+
+🔁 Uso dei pattern: odd, even, 2n, 3n+1...
+
+:nth-child(odd)
+li:nth-child(odd)
+✅ Seleziona i figli in posizioni dispari (1°, 3°, 5°, ...)
+
+:nth-child(even)
+li:nth-child(even)
+✅ Seleziona i figli in posizioni pari (2°, 4°, 6°, ...)
+
+:nth-child(3n)
+li:nth-child(3n)
+✅ Seleziona ogni terzo figlio (3°, 6°, 9°, ...)
+
+:nth-child(2n+1)
+div:nth-child(2n+1)
+✅ Anche questo equivale a odd → seleziona 1°, 3°, 5°, ecc.
+
+==============================
+⚠️ ATTENZIONE! Non filtra per tipo di tag!
+Questo è importantissimo:
+
+<div>
+  <h1>Titolo</h1>       <!-- 1° -->
+  <p>Primo paragrafo</p> <!-- 2° -->
+  <p>Secondo paragrafo</p> <!-- 3° -->
+</div>
+
+p:nth-child(2) { color: red; }
+
+✅ Colora il primo <p>, perché è il secondo figlio del div
+❌ Non colora il secondo <p>, che è il terzo figlio
+
+==============================
+
+✅ Se si volesse filtrare per tipo di tag: usa :NTH-OF-TYPE()
+
+p:nth-of-type(2)
+
+✅ Seleziona il secondo <p>, indipendentemente dalla posizione generale tra i figli.
+--------------------------------------------------------------------
+| Selettore         | Significato                                  |
+| ----------------- | -------------------------------------------- |
+| `:nth-child(n)`   | Il n-esimo **figlio generico**               |
+| `:nth-of-type(n)` | Il n-esimo **figlio di quel tipo specifico** |
+--------------------------------------------------------------------
+
+LIVELLO 19 => USO DI ":NTH-LAST-CHILD( )" ("n" ULTIMO FIGLIO)
+-------------------------------------------------------
+✅ Soluzione:
+bento:nth-child(2)
+
+📘 Spiegazione elementare:
+Nella struttura HTML del livello, il primo figlio è un <plate />.
+Il secondo figlio è proprio il primo <bento />, quello che devi selezionare.
+:nth-child(2) seleziona il secondo elemento figlio nel contenitore, ma solo se è un bento (quindi bisogna scrivere bento:nth-child(2) e non solo :nth-child(2)).
+
+🔍 Differenza da :nth-last-child(n):
+Questo livello è un piccolo inganno: pur parlando di :nth-last-child() nella spiegazione a destra, 
+in realtà l'elemento da selezionare è il primo bento dall’alto, non uno degli ultimi.
+
+Approfondimento:
+✅ SELETTORE :nth-last-child()
+----------------------------------------------------------------
+:nth-last-child(n) è un pseudo-selettore CSS che seleziona uno o più elementi 
+in base alla loro posizione contando dalla fine (cioè dal basso verso l'alto) tra i figli di un elemento genitore.
+📌 Sintassi:
+element:nth-last-child(n)
+
+element: è il tipo di elemento (es. li, div, bento, ecc.).
+n: è un numero intero positivo, formula o parola chiave (es. 1, 2, even, odd, 2n+1...).
+
+Esempio
+li:nth-last-child(2)
+→ seleziona il secondo li partendo dalla fine.
+div:nth-last-child(1)
+→ seleziona il primo figlio partendo dalla fine, se è un div.
+p:nth-last-child(odd)
+→ Tutti i p in posizione dispari dalla fine
+tr:nth-last-child(2n)
+→ Ogni secondo tr dalla fine (2, 4, 6...)
+
+------------------------------------------------------------------------------------------------------
+| Selettore            | Conta da...   | Esempio                | Seleziona...                       |
+| -------------------- | ------------- | ---------------------- | ---------------------------------- |
+| `:nth-child(n)`      | Inizio (alto) | `li:nth-child(2)`      | Il secondo figlio `li` dall'inizio |
+| `:nth-last-child(n)` | Fine (basso)  | `li:nth-last-child(2)` | Il secondo figlio `li` dalla fine  |
+------------------------------------------------------------------------------------------------------
+
+LIVELLO 20 => USO DI ":FIRST-OF-TYPE( )" (PRIMO DI QUEL TIPO)
+-------------------------------------------------------
+✅ Soluzione:
+apple:first-of-type
+
+📘 Spiegazione elementare:
+Questo selettore prende il primo elemento di un certo tipo (in questo caso apple) tra i fratelli, anche se non è il primo in assoluto.
+Nel tuo codice, il primo elemento è un orange, ma il primo apple viene comunque selezionato.
+🔧 Come funziona:
+:first-of-type ignora tutti gli altri tipi di elementi.
+Cerca il primo elemento del tipo indicato (come apple, p, li, div, ecc.) tra i figli dello stesso genitore.
+
+È diverso da :first-child, che prende il primo figlio in assoluto.
+
+🧩 Esempi:
+p:first-of-type      /* primo paragrafo tra i figli */
+div > span:first-of-type  /* primo <span> dentro ogni <div> */
+
+🟢 Risultato:
+Viene selezionato solo il primo apple, ignorando il fatto che è il secondo figlio nel DOM.
+Utile quando ci sono più tipi di elementi, ma si vuole stilizzare il primo di uno specifico tipo.
+
+LIVELLO 21
+-------------------------------------------------------
+✅ Soluzione:
+plate:nth-of-type(even)
+
+📘 Spiegazione elementare:
+Questo selettore prende tutti i piatti (plate) in posizione pari: il 2°, 4°, 6°, ecc.
+Nel gioco ci sono più <plate>, e devono essere selezionati solo quelli che si trovano in posizione 2, 4, ...
+🔧 Come funziona:
+:nth-of-type(even) seleziona tutti gli elementi dello stesso tipo (in questo caso plate) che sono in posizione pari rispetto ai fratelli dello stesso tipo.
+L'indice parte da 1: quindi even corrisponde a 2°, 4°, 6°, ecc.
+Si possono usare anche numeri o formule come :nth-of-type(2n) (equivalente a even), :nth-of-type(odd), :nth-of-type(3n+1), ecc.
+🟢 Risultato:
+Tutti i piatti in posizione pari (2°, 4°, 6°) vengono selezionati e evidenziati.
+
+LIVELLO 22
+-------------------------------------------------------
+LIVELLO 23
+-------------------------------------------------------
+LIVELLO 24
+-------------------------------------------------------
+LIVELLO 25
+-------------------------------------------------------
+LIVELLO 26
+-------------------------------------------------------
+LIVELLO 27
+-------------------------------------------------------
+LIVELLO 28
+-------------------------------------------------------
+LIVELLO 29
+-------------------------------------------------------
+LIVELLO 30
+-------------------------------------------------------
+LIVELLO 31
+-------------------------------------------------------
+LIVELLO 32
+-------------------------------------------------------
+LIVELLO 33
+-------------------------------------------------------

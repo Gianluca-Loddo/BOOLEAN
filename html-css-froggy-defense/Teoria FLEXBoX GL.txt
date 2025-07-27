@@ -1,0 +1,258 @@
+=======================================================
+TEORIA FLEXBoX
+=======================================================
+
+JUSTIFY-CONTENT
+-------------------------------------------------------
+Questa proprietà allinea gli elementi orizzontalmente e accetta i seguenti valori:
+
+flex-start: Allinea gli elementi alla sinistra del contenitore.
+flex-end: Allinea gli elementi alla destra del contenitore.
+center: Allinea gli elementi al centro del contenitore.
+space-between: Separa gli elementi con uguale spazio tra di loro.
+space-around: Separa gli elementi con uguale spazio attorno ad essi.
+-------------------------------------------------------
+
+ALIGN-ITEMS
+-------------------------------------------------------
+Questa proprietà CSS allinea gli elementi verticalmente ed accetta i seguenti valori:
+
+flex-start: Allinea gli elementi all'inizio del loro contenitore.
+flex-end: Allinea gli elementi alla fine del loro contenitore.
+center: Centra gli elementi verticalmente.
+baseline: Gli elementi vengono disposti in modo da allineare le loro linee di base.
+stretch: Gli elementi sono allungati per occupare tutto il contenitore.
+-------------------------------------------------------
+
+FLEX-DIRECTION
+-------------------------------------------------------
+Questa proprietà definisce la direzione in cui gli elementi verranno posizionati nel contenitore e accetta i seguenti valori:
+
+row: Gli elementi sono posizionati nella stessa direzione del testo.
+row-reverse: Gli elementi sono posizionati nella direzione opposta al testo.
+column: Gli elementi sono posizionati dall'alto verso il basso.
+column-reverse: Gli elementi sono posizionati dal basso verso l'alto.
+
+ATTENZIONE: 
+La direzione del main axis (cioè l’asse principale su cui si dispongono gli elementi) dipende direttamente dal valore di flex-direction.
+Il main axis (asse principale) è la linea immaginaria lungo la quale Flexbox dispone gli elementi.
+
+flex-direction		Main Axis	                        Cross Axis
+
+row			➡️ Orizzontale da sinistra a destra	⬇️ Verticale dall’alto in basso
+row-reverse		⬅️ Orizzontale da destra a sinistra	⬇️ Verticale dall’alto in basso
+column			⬇️ Verticale dall’alto in basso		➡️ Orizzontale da sinistra a destra
+column-reverse		⬆️ Verticale dal basso verso l’alto	➡️ Orizzontale da sinistra a destra
+
+
+Quando cambia il flex-direction, cambiano anche gli effetti visivi di justify-content e align-items, perché:
+
+justify-content → agisce lungo il main axis
+
+align-items → agisce lungo il cross axis
+
+
+🔄 Ecco cosa succede quando si cambia il flex-direction:
+
+| `flex-direction` | `justify-content` agisce su... 	| `align-items` agisce su...  	|
+| ---------------- | ------------------------------ 	| --------------------------- 	|
+| `row`            | ➡️ Orizzontale (sx → dx)       	| ⬇️ Verticale (alto → basso) 	|
+| `row-reverse`    | ⬅️ Orizzontale (dx → sx)		| ⬇️ Verticale (alto → basso) 	|
+| `column`         | ⬇️ Verticale (alto → basso)		| ➡️ Orizzontale (sx → dx)    	|
+| `column-reverse` | ⬆️ Verticale (basso → alto)    	| ➡️ Orizzontale (sx → dx)    	|
+------------------------------------------------------
+
+ORDER
+-------------------------------------------------------
+A volte invertire l'ordine di visualizzazione delle righe o delle colonne non è sufficiente. 
+In questi casi possiamo applicare la proprietà order sui singoli elementi. 
+Ogni elemento ha assegnato il valore 0 di default, ma è possibile utilizzare questa proprietà per assegnare un valore intero positivo o negativo.
+
+SU CSS
+.item {
+  order: X;
+}
+
+OPPURE DIRETTAMENTE IN HTML
+<div class="contenitore">
+  <div class="item" style="order: 2">🐶</div>
+  <div class="item" style="order: 1">🐱</div>
+  <div class="item" style="order: 3">🐰</div>
+</div>
+
+Anche se nel codice l’ordine è 🐶 - 🐱 - 🐰, 
+quello che si vede è: 👉 🐱 - 🐶 - 🐰
+
+Perché:
+🐱 ha order: 1 → primo
+🐶 ha order: 2 → secondo
+🐰 ha order: 3 → terzo
+-------------------------------------------------------
+
+🧱 FLEX-BASIS - LA DIMENSIONE DI PARTENZA
+-------------------------------------------------------
+🧠 Cos’è?
+Immaginando che ogni "mattoncino" (cioè ogni elemento HTML figlio di un contenitore Flex) dicesse:
+“Io voglio iniziare largo 100px”.
+Questo sarebbe il suo flex-basis, cioè quanto spazio prenderebbe inizialmente sull'asse principale.
+
+🎨 Esempio:
+<div style="display: flex;">
+  <div style="flex-basis: 100px; background: lightblue;">A</div>
+  <div style="flex-basis: 200px; background: lightgreen;">B</div>
+</div>
+
+L’elemento A parte largo 100px.
+L’elemento B parte largo 200px.
+
+📌 Note importanti:
+flex-basis è come width, ma lavora in modo più "intelligente" con Flexbox.
+Usando flex-direction: row, flex-basis controllerebbe la larghezza.
+Usando flex-direction: column, flex-basis controllerebbe l’altezza.
+
+Può assumere gli stessi valori accettati da width o height: 
+valori assoluti, valori percentuali ed il valore
+auto (valore di default).
+
+📈 FLEX-GROW — IL FATTORE DI CRESCITA
+-------------------------------------------------------
+
+🧠 Cos’è?
+Immaginando il contenitore abbia spazio extra. 
+Con flex-grow, si dice agli elementi quanto devono crescere per occupare quello spazio.
+“Se avanza spazio, io voglio prenderne un po’.”
+
+🎨 Esempio:
+<div style="display: flex;">
+  <div style="flex-grow: 1; background: lightblue;">A</div>
+  <div style="flex-grow: 2; background: lightgreen;">B</div>
+</div>
+
+A prenderà 1 parte dello spazio extra.
+B prenderà 2 parti (cioè il doppio di A).
+➡️ Totale = 3 parti → A = 1/3, B = 2/3 dello spazio che rimane!
+
+💡 Attenzione:
+Mettendo flex-grow: 0, l’elemento non può crescere. (valore di default)
+Mettendo flex-grow: 1, l'elemento crescerà qualora vi sia spazio disponibile.
+Mettendo flex-grow: 1, l'elemento crescerà fino al valore (fattore) indicato.
+
+📉 FLEX-SHRINK — IL FATTORE DI RIDUZIONE
+-------------------------------------------------------
+
+🧠 Cos’è?
+Serve quando non c’è abbastanza spazio. 
+Con flex-shrink all'elemento viene detto quanto può restringersi.
+
+“Se lo spazio è troppo poco, quanto sono disposto a stringermi?”
+
+🎨 Esempio:
+<div style="display: flex; width: 300px;">
+  <div style="flex-basis: 200px; flex-shrink: 1; background: lightblue;">A</div>
+  <div style="flex-basis: 200px; flex-shrink: 2; background: lightgreen;">B</div>
+</div>
+
+Spazio totale richiesto: 400px
+Spazio disponibile: 300px
+Troppo poco? Allora gli elementi si stringono:
+A si stringe un po’
+B si stringe il doppio
+➡️ B diventerà più piccolo di A.
+
+💡 Attenzione:
+Mettendo flex-grow: 0, l’elemento non può restringersi.
+Mettendo flex-grow: 1, l'elemento potrà restringersi in virtù dello spazio disponibile. (valore di default)
+Mettendo flex-grow: 1, l'elemento potrà restringersi fino al valore (fattore) indicato.
+
+ALIGN-SELF
+-------------------------------------------------------
+Un'altra proprietà che è possibile applicare ai singoli elementi è align-self. 
+Essa accetta gli stessi valori di align-items.
+------------------------------------------------------
+
+FLEX-WRAP
+-------------------------------------------------------
+flex-wrap è una proprietà CSS utilizzata nei contenitori flex (display: flex) per determinare se gli elementi figli 
+devono restare su una singola riga oppure possono andare a capo quando non c'è spazio sufficiente.
+
+1. flex-wrap: nowrap;      (predefinito)
+   - Tutti gli elementi restano su una sola riga.
+   - Se lo spazio è insufficiente, gli elementi si comprimono per adattarsi.
+   - Nessun ritorno a capo è permesso.
+
+2. flex-wrap: wrap;
+   - Gli elementi si distribuiscono su più righe, andando a capo quando necessario.
+   - Le righe si dispongono dall’alto verso il basso (comportamento naturale nei layout top-down).
+
+3. flex-wrap: wrap-reverse;
+   - Comportamento simile a wrap, ma le righe si distribuiscono dal basso verso l’alto.
+   - Utile in layout specifici dove si vuole l’inversione dell’asse verticale.
+
+Effetti pratici:
+- flex-wrap influisce solo se la dimensione orizzontale (nel caso di flex-direction: row) non è sufficiente a contenere tutti gli elementi inline.
+- In combinazione con flex-direction, determina l’orientamento e la direzione di overflow degli elementi flex.
+
+Esempio:
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+------------------------------------------------------
+
+FLEX-FLOW 
+-------------------------------------------------------
+flex-flow è una proprietà shorthand (abbreviata) in CSS che combina due proprietà flexbox in una sola riga:
+
+  1. flex-direction
+  2. flex-wrap
+
+Sintassi:
+  flex-flow: <flex-direction> <flex-wrap>;
+
+Esempi validi:
+  flex-flow: row nowrap;        → (default) disposizione orizzontale su una sola riga
+  flex-flow: column wrap;       → disposizione verticale, con elementi che vanno a capo
+  flex-flow: row-reverse wrap;  → orizzontale da destra a sinistra, con ritorno a capo
+  flex-flow: column-reverse nowrap; → verticale dal basso verso l’alto, su una riga unica
+
+Dettagli:
+- flex-direction determina l’asse principale e l’orientamento degli elementi (es: row, column).
+- flex-wrap indica se gli elementi devono andare a capo quando non c’è spazio.
+
+Nota:
+- L’ordine dei valori conta: prima `flex-direction`, poi `flex-wrap`.
+- È equivalente a scrivere separatamente:
+    flex-direction: row;
+    flex-wrap: wrap;
+
+Esempio pratico:
+.container {
+  display: flex;
+  flex-flow: row wrap;
+}
+-------------------------------------------------------
+
+ALIGN-CONTENT
+-------------------------------------------------------
+align-content si utilizza per decidere come le linee verranno distanziate tra di loro. 
+
+Questa proprietà accetta i seguenti valori:
+
+flex-start: Le linee sono raggruppate all'inizio del contenitore.
+flex-end: Le linee sono raggruppate alla fine del contenitore.
+center: Le linee vengono centrate verticalmente nel contenitore.
+space-between: Le linee occupano tutto lo spazio del contenitore e sono separate tra di loro dalla stessa quantità di spazio.
+space-around: Le linee sono separate dalle altre linee, e dall'inizio e dalla fine del contenitore dalla stessa quantità di spazio.
+stretch: Le linee vengono allungate per occupare tutto lo spazio disponibile.
+
+Questo potrebbe creare confusione, ma align-content determina lo spazio tra le linee 
+mentre align-items determina come gli elementi nell'insieme vengono disposti nel contenitore. 
+Se c'è una sola linea, align-content non ha alcun effetto.
+-------------------------------------------------------
+
+Gianluca Loddo
+
+
+
+
+

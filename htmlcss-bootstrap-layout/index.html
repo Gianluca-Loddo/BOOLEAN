@@ -1,0 +1,204 @@
+<!-- NOTA DI SPIEGAZIONE SU BOOTSTRAP 
+ 
+Bootstrap divide ogni riga (row) in 12 colonne
+Per fare:
+mezza larghezza → col-6 (12 / 2)
+un terzo → col-4 (12 / 3)
+un quarto → col-3 (12 / 4)
+tutta → col-12
+
+E si possono fare responsive con:
+col-sm-6 (per schermi piccoli e superiori)
+col-md-4 (per schermi medi e superiori)
+col-lg-3 (per schermi grandi)-->
+
+
+<!--
+Spiegazione delle classi Bootstrap per la griglia
+| Classe                           | Cosa fa                                                                       | Esempio                   |
+| -------------------------------- | ----------------------------------------------------------------------------- | ------------------------- |
+| `container`                      | Crea un contenitore **centrato** con margini ai lati                          | `<div class="container">` |
+| `row`                            | Crea una **riga** per contenere colonne                                       | `<div class="row">`       |
+| `col-12`, `col-6`, `col-4`, ecc. | Crea **colonne** dentro la riga. Bootstrap divide lo schermo in **12 parti**. | `col-6` = metà larghezza  |
+
+
+Responsive design (adattabile a dispositivi)
+| Classe                        | Cosa fa                                                       |
+| ----------------------------- | ------------------------------------------------------------- |
+| `col-sm-6`                    | 6 colonne su **schermi piccoli e superiori**                  |
+| `col-md-4`                    | 4 colonne su **tablet (≥768px)**                              |
+| `col-lg-3`                    | 3 colonne su **desktop (≥992px)**                             |
+| `row-cols-2`, `row-cols-md-4` | Divide le colonne **automaticamente** in base alla dimensione |
+
+Colori di sfondo Bootstrap
+| Classe         | Colore                  | Dove si usa               |
+| -------------- | ----------------------- | ------------------------- |
+| `bg-primary`   | Blu Bootstrap           | Per dare colore di sfondo |
+| `bg-secondary` | Grigio scuro            |                           |
+| `bg-success`   | Verde                   |                           |
+| `bg-danger`    | Rosso                   |                           |
+| `bg-warning`   | Giallo                  |                           |
+| `bg-info`      | Azzurro                 |                           |
+| `bg-light`     | Grigio chiaro           |                           |
+| `bg-dark`      | Nero/grigio molto scuro |                           |
+
+Colori del testo
+| Classe        | Effetto                              |
+| ------------- | ------------------------------------ |
+| `text-white`  | Testo bianco (serve su sfondi scuri) |
+| `text-muted`  | Testo grigio chiaro (più "morbido")  |
+| `text-center` | Centra il testo                      |
+| `text-end`    | Allinea il testo a destra            |
+| `text-start`  | Allinea il testo a sinistra          |
+
+Margini e Padding
+| Classe             | Significato                              |
+| ------------------ | ---------------------------------------- |
+| `p-3`              | Padding (spazio interno) su tutti i lati |
+| `p-1` fino a `p-5` | Da piccolo a grande                      |
+| `m-3`              | Margin (spazio esterno) su tutti i lati  |
+| `mt-4`             | Margin top (sopra)                       |
+| `mb-2`             | Margin bottom (sotto)                    |
+| `ms-2`, `me-2`     | Margin sinistro (start) / destro (end)   |
+
+Altro utile
+| Classe                   | Significato                                |
+| ------------------------ | ------------------------------------------ |
+| `d-flex`                 | Attiva Flexbox (per allineamenti avanzati) |
+| `justify-content-center` | Centra orizzontalmente                     |
+| `align-items-center`     | Centra verticalmente                       |
+| `shadow`                 | Aggiunge un’ombra al box                   |
+| `rounded`                | Angoli arrotondati                         |
+-->
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Grid Layout Responsive</title>
+    <!-- Bootstrap 5 CDN - Link al CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar / Titolo Principale -->
+    <div class="text-center mt-4"> <!-- centra il testo e mt-4 da margine sopra-->
+        <h2>Bootstrap 5 Responsive Grid</h2>
+        <p class="text-muted">Layout a griglia con diversi breakpoint (sm, md, lg).</p>
+        <!-- text-muted colore grigio chiaro -->
+    </div>
+
+    <!-- Container Principale -->
+    <div class="container mt-5"> <!-- container mantiene tutto al centro e lascia margine ai lati -->
+
+        <!-- RIGA 1: 2 colonne -->
+        <div class="row"> <!--Inizia una riga: è come una striscia su cui si "poggiano" le colonne -->
+
+            <!-- PRIMA COLONNA (BIANCA) -->
+            <div class="col-12 col-md-6 col-lg-4 bg-light p-3">
+                <!--  Crea una colonna con:
+                    col-12 = larga tutta su telefoni
+                    col-md-6 = mezza su tablet
+                    col-lg-4 = 1/3 su PC
+                    bg-light = sfondo chiaro
+                    p-3 = spazio interno (padding)-->
+                <h5>Colonna 1</h5>
+                <p>Larghezza intera su dispositivi piccoli, metà larghezza su dispositivi medi e un terzo su dispositivi
+                    grandi .</p>
+            </div>
+
+            <!-- SECONDA COLONNA (GRIGIA)-->
+            <div class="col-12 col-md-6 col-lg-8 bg-secondary text-white p-3">
+                <!-- text-white per rendere leggibile il testo su sfondo scuro -->
+                <!--  Seconda colonna:
+                    col-12 = tutta larghezza su mobile
+                    col-md-6 = metà su tablet
+                    col-lg-8 = 2/3 su PC
+                    bg-secondary = grigio scuro
+                    text-white = testo bianco (per contrasto)
+                    p-3 = padding-->
+                <h5>Colonna 2</h5>
+                <p>Larghezza intera su dispositivi piccoli, metà larghezza su dispositivi medi e due terzi su
+                    dispositivi grandi .</p>
+            </div>
+
+        </div>
+
+
+        <!-- RIGA 2: 3 colonne -->
+        <div class="row mt-4">
+            <div class="col-6 col-md-4 bg-primary text-white p-3">
+                <h5>Colonna 1</h5>
+                <p>Metà larghezza su dispositivi piccoli e un terzo su dispositivi medi e più grandi.</p>
+            </div>
+            <div class="col-6 col-md-4 bg-success text-white p-3">
+                <h5>Colonna 2</h5>
+                <p>Metà larghezza su dispositivi piccoli e un terzo su dispositivi medi e più grandi.</p>
+            </div>
+            <div class="col-12 col-md-4 bg-danger text-white p-3">
+                <h5>Colonna 3</h5>
+                <p>Larghezza intera su dispositivi piccoli (col-12) e un terzo su dispositivi medi e più grandi.</p>
+            </div>
+        </div>
+
+        <!-- RIGA 3: 4 colonne -->
+        <div class="row mt-4">
+            <div class="col-6 col-md-3 bg-info text-white p-3">
+                <h5>Colonna 1</h5>
+                <p>Metà larghezza su dispositivi piccoli e un quarto su dispositivi medi e più grandi.</p>
+            </div>
+            <div class="col-6 col-md-3 bg-warning text-white p-3">
+                <h5>Colonna 2</h5>
+                <p>Metà larghezza su dispositivi piccoli e un quarto su dispositivi medi e più grandi.</p>
+            </div>
+            <div class="col-6 col-md-3 bg-dark text-white p-3">
+                <h5>Colonna 3</h5>
+                <p>Metà larghezza su dispositivi piccoli e un quarto su dispositivi medi e più grandi.</p>
+            </div>
+            <div class="col-6 col-md-3 bg-light p-3">
+                <h5>Colonna 4</h5>
+                <p>Metà larghezza su dispositivi piccoli e un quarto su dispositivi medi e più grandi.</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+
+<!--    col-12: intera larghezza su mobile
+        col-6: metà
+        col-md-4: 1/3 da tablet in su
+        col-md-3: 1/4 da tablet in su
+        bg-primary, bg-danger, bg-dark, ecc.: colori di sfondo Bootstrap
+        text-white: colore del testo bianco (per leggibilità)
+        p-3: padding interno (spazio dentro il box)
+        mt-4: margine superiore (space tra le righe)
+
+APPRONFODIMENTO SUI BREAKPOINT BOOTSTRAP 5
+
+| **Classe** | **Min. larghezza schermo** | **Esempio di dispositivo**          | **Nome "tecnico"**        |
+| ---------- | -------------------------- | ----------------------------------- | ------------------------- |
+| `col-`     | 0 px                       | Smartphone piccoli                  | (nessun breakpoint)       |
+| `col-sm-`  | ≥ 576 px                   | Smartphone larghi (es. iPhone Plus) | `sm` = small              |
+| `col-md-`  | ≥ 768 px                   | Tablet verticali (es. iPad)         | `md` = medium             |
+| `col-lg-`  | ≥ 992 px                   | Laptop piccoli                      | `lg` = large              |
+| `col-xl-`  | ≥ 1200 px                  | Desktop grandi                      | `xl` = extra large        |
+| `col-xxl-` | ≥ 1400 px                  | Monitor giganti (4K)                | `xxl` = extra-extra large |
+
+Per quanto riguarda i dispositivi mobili dunque bisogna fare attenzione:
+
+sm è per smartphone larghi (es. iPhone Plus) ma per quelli più piccoli non serve 
+in quanto Bootstrap considera tutto ciò che è inferiore a 576px come "col-12" (intera larghezza). 
+
+RICAPITOLANDO:
+
+| Classe      | Dove funziona                                                   | Esempio               | 
+| ----------- | --------------------------------------------------------------- | --------------------  |
+| `col-12`    | **Sempre**, su **tutti gli schermi** (anche smartphone piccoli) | 📱 🖥️                 |
+| `col-sm-12` | Solo da **small** in su = **tablet piccolo** (minimo 576px)     | ❌ smartphone < 576px |
+-->

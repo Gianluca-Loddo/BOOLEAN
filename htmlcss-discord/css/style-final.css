@@ -1,0 +1,504 @@
+* {
+    margin: 0;
+    /* rimuove margini predefiniti */
+    padding: 0;
+    /* rimuove padding predefiniti */
+    box-sizing: border-box;
+    /* include padding e bordo nelle dimensioni degli elementi */
+}
+
+
+/* ========================= */
+/* FONT PRINCIPALE DEL SITO */
+/* ========================= */
+
+/* Applica il font "Noto Sans" al corpo del documento */
+/* e imposta un colore di testo predefinito */
+body {
+    font-family: 'Noto Sans', sans-serif;
+    /* Font principale con fallback */
+    color: #ffffff;
+    /* Colore di testo di base (bianco) */
+    font-size: 16px;
+    /* Dimensione di base leggibile */
+    line-height: 1.6;
+    /* Spaziatura verticale gradevole */
+}
+
+
+/* ========================= */
+/*  HEADER - NAVIGATION BAR  */
+/* ========================= */
+
+/* ❗️Nota: il colore di sfondo blu va applicato su `.box-header`, non su `header`.  
+È importante inserire anche `padding-top: 20px` per evitare che l’immagine venga tagliata in alto. */
+
+.box-header {
+    background-color: #255ee9;
+    /* colore blu Discord */
+    padding-top: 20px;
+    /* spazio sopra l'header */
+    padding-bottom: 0px;
+    /* rimozione spazio sotto l'immagine hero: evita ci sia del colore */
+}
+
+
+nav {
+    display: flex;
+    /* disposizione orizzontale */
+    justify-content: space-between;
+    /* distribuisce gli elementi */
+    align-items: center;
+    /* allinea verticalmente */
+    max-width: 1200px;
+    /* larghezza massima del contenuto */
+    margin: 0 auto;
+    /* centra tutto orizzontalmente*/
+    padding: 0 20px;
+    /* margine interno ai lati */
+}
+
+/* ========================= */
+/* LOGO A SINISTRA */
+/* ========================= */
+
+.logo img {
+    height: 35px;
+    /* altezza fissa per il logo */
+}
+
+/* ========================= */
+/* LINK CENTRALI (testi cliccabili) */
+/* ========================= */
+
+.links {
+    display: flex;
+    gap: 30px;
+    /* distanza tra le voci */
+    font-size: 14px;
+}
+
+.links a {
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    /* rimuove la sottolineatura */
+    cursor: pointer;
+    /* manina al passaggio */
+    transition: color 0.2s;
+    /* transizione al passaggio del mouse: cambia il colore (definito in :hover) e il tempo di transizione */
+}
+
+.links a:hover {
+    color: #b9c9ff;
+    /* leggero effetto hover */
+}
+
+/* ========================= */
+/* BOTTONE ACCEDI */
+/* ========================= */
+
+.login {
+    background-color: white;
+    color: black;
+    padding: 8px 16px;
+    border-radius: 40px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s;
+    /* transizione al passaggio del mouse */
+}
+
+.login:hover {
+    background-color: #e6e6e6;
+}
+
+
+/* ========================= */
+/* HERO SECTION              */
+/* ========================= */
+
+/* Contenitore principale della sezione hero (subito sotto l’header) */
+.hero {
+    background-image: url("../img/jumbo.png");
+    background-size: cover;
+    /* copre tutta l'area senza distorsioni */
+    background-position: center;
+    /* centra l'immagine di sfondo: altrimenti con uno zoom il testo non rimarrebbe centrale */
+    background-repeat: no-repeat;
+    padding: 150px 0;
+    /* spazio sopra e sotto il contenuto: altrimenti l'immagine sfondo sarebbe troppo piccola */
+    text-align: center;
+    color: white;
+}
+
+
+
+/* Box interno che limita la larghezza massima del contenuto */
+.box-hero {
+    max-width: 900px;
+    /* larghezza massima del contenuto, oltre non cresce */
+    margin: 0 auto;
+    /* centra orizzontalmente il box */
+    padding: 0 20px;
+    /* margine interno laterale per non far toccare il bordo */
+}
+
+/* Titolo grande: “Il tuo posto per parlare” */
+.hero h1 {
+    font-size: 48px;
+    /* dimensione grande del testo */
+    font-weight: 800;
+    /* testo molto marcato (grassetto estremo) */
+    margin-bottom: 30px;
+    /* spazio sotto il titolo prima del paragrafo */
+}
+
+/* Paragrafo descrittivo (sotto il titolo) */
+.hero p {
+    font-size: 18px;
+    /* dimensione leggibile ma più piccola del titolo */
+    line-height: 1.6;
+    /* altezza interlinea per migliorare la leggibilità */
+    margin-bottom: 40px;
+    /* spazio sotto il paragrafo prima dei bottoni */
+}
+
+/* Contenitore dei due bottoni (scarica e browser) */
+.hero-buttons {
+    display: flex;
+    /* i bottoni vanno affiancati orizzontalmente */
+    justify-content: center;
+    /* centra orizzontalmente i bottoni */
+    gap: 20px;
+    /* distanza tra un bottone e l’altro */
+    flex-wrap: wrap;
+    /* se manca spazio, i bottoni vanno a capo senza uscire dai limiti */
+}
+
+/* Stile base per tutti i bottoni della hero */
+.hero-buttons button {
+    font-size: 16px;
+    /* dimensione del testo dei bottoni */
+    padding: 14px 22px;
+    /* spazio interno (alto-basso 14px, destra-sinistra 22px) */
+    border: none;
+    /* nessun bordo visibile */
+    border-radius: 25px;
+    /* angoli arrotondati, effetto “pillola” */
+    cursor: pointer;
+    /* cambia il cursore in manina quando ci passi sopra */
+    font-weight: bold;
+    /* testo in grassetto */
+}
+
+/* Bottone “Scarica per Mac” - fondo bianco, testo nero */
+.hero-buttons .mac {
+    background-color: white;
+    /* sfondo del bottone */
+    color: black;
+    /* colore del testo */
+}
+
+/* Bottone “Apri Discord nel tuo browser” - fondo scuro, testo bianco */
+.hero-buttons .browser {
+    background-color: #23272a;
+    /* grigio molto scuro, stile Discord */
+    color: white;
+    /* testo bianco */
+}
+
+
+/* ========================= */
+/*    SEZIONE ALTERNATA      */
+/* ========================= */
+
+/* SFONDI ALTERNATI */
+
+.sezione-bianca {
+    background-color: white;
+}
+
+.sezione-grigia {
+    background-color: #f6f6f6;
+}
+
+
+.box-sezione-alternata {
+    display: flex;
+    /* disposizione orizzontale: mette immagine e testo affiancati */
+    align-items: center;
+    justify-content: space-between;
+    /* distribuisce lo spazio tra immagine e testo: li spinge entrambi ai lati */
+    max-width: 1100px;
+    /* larghezza massima del contenuto */
+    margin: 0 auto;
+    /* centra orizzontalmente il contenuto: sopra e sotto non mette spazio */
+    padding: 100px 30px;
+    /* margine interno: spazio sopra e sotto, 30px ai lati */
+    gap: 60px;
+    /* spazio tra immagine e testo */
+}
+
+
+/* Larghezza proporzionale piccola e grande (immagine e testo)
+"Il codice usa il sistema Flexbox per dividere lo spazio tra due elementi.
+flex: 1.3 significa che quell’elemento prende 1.3 parti di spazio, mentre l’altro con flex: 1 prende 1. 
+Così, il primo elemento risulta più largo in proporzione.
+È un modo per controllare la dimensione relativa degli elementi in un layout flessibile, senza usare valori fissi." */
+
+.box-sezione-alternata .grande {
+    flex: 1.3;
+}
+
+.box-sezione-alternata .piccola {
+    flex: 1;
+}
+
+/* Testo */
+.box-sezione-alternata h2 {
+    font-size: 32px;
+    font-weight: 700;
+    /* testo in grassetto */
+    margin-bottom: 20px;
+    color: black;
+}
+
+.box-sezione-alternata p {
+    font-size: 18px;
+    line-height: 1.6;
+    /* altezza interlinea per migliorare la leggibilità */
+    color: black;
+}
+
+/* IMMAGINE RESPONSIVE */
+.box-sezione-alternata img {
+    max-width: 100%;
+    /* larghezza massima 100%: si adatta al contenitore */
+    height: auto;
+    /* altezza automatica per mantenere le proporzioni */
+    display: block;
+    /* rende l'immagine un blocco, occupa tutta la larghezza disponibile */
+}
+
+
+/* SEZIONE INVERTITA: 2 SEZIONE */
+.sezione-invertita .grande {
+    order: 2;
+    /* mette l'immagine a destra */
+}
+
+.sezione-invertita .piccola {
+    order: 1;
+    /* mette il testo a sinistra */
+}
+
+/* ========================= */
+/*       SEZIONE ONDE        */
+/* ========================= */
+
+.onda {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.onda svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* ========================= */
+/*       BLOCCO FINALE       */
+/* ========================= */
+
+/* box-blocco-finale è il contenitore esterno. Serve a definire lo sfondo grigio e centrare il contenuto.*/
+.box-blocco-finale {
+    background-color: #f6f6f6;
+    text-align: center;
+    padding: 100px 30px;
+}
+
+/* box-contenuto-finale è il contenitore interno, con una larghezza massima (1100px) 
+per non far allargare troppo il contenuto su schermi grandi. */
+.box-contenuto-finale {
+    max-width: 1100px;
+    margin: 0 auto;
+    color: black;
+}
+
+.box-contenuto-finale h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.box-contenuto-finale p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* L'immagine principale ha una classe illustrazione-finale per gestire dimensione responsive, margine inferiore, e centratura. */
+.box-contenuto-finale img.illustrazione-finale {
+    max-width: 100%;
+    /* larghezza massima 100%: si adatta al contenitore */
+    height: auto;
+    /* altezza automatica per mantenere le proporzioni */
+    display: block;
+    /* rende l'immagine un blocco, occupa tutta la larghezza disponibile */
+    margin: 0 auto;
+    /* margine superiore e inferiore 0, per centrare l'immagine l'auto equidistanzia */
+}
+
+/* L'immagine delle stelle ha una classe stars per gestire dimensione, margine e centratura. 
+viene usata come separatore tra l'illustrazione e il testo */
+.box-contenuto-finale img.stars {
+    margin: 0 auto;
+    /* margine superiore e inferiore 0, per centrare l'immagine l'auto equidistanzia */
+    height: 45px;
+    display: block;
+    /* rende l'immagine un blocco, occupa tutta la larghezza disponibile */
+}
+
+.box-contenuto-finale h3 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.box-contenuto-finale .mac {
+    background-color: #5865f2;
+    color: white;
+    font-size: 16px;
+    padding: 12px 28px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+.box-contenuto-finale .mac:hover {
+    background-color: #4752c4;
+}
+
+
+
+/* ========================= */
+/*        FOOTER STILE       */
+/* ========================= */
+
+footer {
+  background-color: #23272a;
+  color: white;
+  font-size: 14px;
+}
+
+.box-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 30px;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* Parte sinistra */
+.footer-left {
+  flex: 1;
+  min-width: 200px;
+}
+
+.logo-footer {
+  height: 30px;
+  margin-bottom: 20px;
+}
+
+.footer-left h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.bandiera {
+  height: 20px;
+  margin-bottom: 20px;
+}
+
+.social i {
+  margin-right: 12px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Colonne */
+.footer-columns {
+  display: flex;
+  flex: 3;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.colonna h5 {
+  font-size: 14px;
+  color: #5865f2;
+  margin-bottom: 16px;
+}
+
+.colonna ul {
+  list-style: none;
+}
+
+.colonna ul li {
+  margin-bottom: 10px;
+}
+
+.colonna ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.colonna ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Linea divisoria */
+footer hr {
+  border: none;
+  border-top: 1px solid #3c3f45;
+  margin: 40px 0 20px;
+}
+
+/* Parte inferiore finale */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-bottom .registrati {
+  background-color: #5865f2;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  padding: 8px 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.footer-bottom .registrati:hover {
+  background-color: #4752c4;
+}

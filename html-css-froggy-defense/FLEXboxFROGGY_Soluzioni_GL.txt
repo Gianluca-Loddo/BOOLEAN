@@ -1,0 +1,469 @@
+FLEXBOX FROGGY (Soluzioni e Spiegazioni)
+Gianluca Loddo
+
+USO JUSTIFY-CONTENT
+-------------------------------------------------------
+Questa proprietà allinea gli elementi orizzontalmente e accetta i seguenti valori:
+
+flex-start: Allinea gli elementi alla sinistra del contenitore.
+flex-end: Allinea gli elementi alla destra del contenitore.
+center: Allinea gli elementi al centro del contenitore.
+space-between: Separa gli elementi con uguale spazio tra di loro.
+space-around: Separa gli elementi con uguale spazio attorno ad essi.
+-------------------------------------------------------
+
+LIVELLO 1
+justify-content: flex-end;
+📘 Spiegazione elementare:
+La proprietà justify-content serve per spostare gli oggetti orizzontalmente (da sinistra a destra) dentro il contenitore.
+Il valore flex-end significa "vai tutto a destra".
+In questo livello, c’è una sola rana da spostare sulla foglia di ninfea che si trova a destra.
+Grazie a flex-end, la rana si posiziona esattamente dove serve.
+🟢 Risultato: la rana si allinea a destra, esattamente sopra la foglia.
+
+LIVELLO 2
+justify-content: center;
+📘 Spiegazione elementare:
+La proprietà justify-content serve a spostare le ranocchie da sinistra verso destra, decidendo dove posizionarle lungo l’asse orizzontale.
+Il valore center significa: "mettile al centro del contenitore".
+In questo livello ci sono due ranocchie che devono finire sulle due foglie centrali.
+Con center, tutte le ranocchie vengono raggruppate al centro, proprio sopra le foglie.
+🟢 Risultato: le ranocchie si allineano al centro, ognuna esattamente sopra la propria foglia.
+
+LIVELLO 3
+justify-content: space-around;
+📘 Spiegazione elementare:
+La proprietà justify-content serve sempre a spostare le ranocchie lungo la riga.
+Il valore space-around significa:
+"metti uno spazio uguale attorno a ogni ranocchia", cioè:
+uno spazio prima della prima ranocchia,
+uno spazio tra ogni ranocchia,
+uno spazio dopo l’ultima ranocchia.
+In questo livello, le tre ranocchie devono finire ognuna sopra una foglia, ma non attaccate, bensì ben distanziate con spazio tutto intorno.
+🟢 Risultato: ogni rana finisce esattamente sopra una foglia, con spazi uguali attorno a ciascuna.
+
+LIVELLO 4
+justify-content: space-between;
+📘 Spiegazione elementare:
+La proprietà justify-content serve per disporre le ranocchie lungo la riga, decidendo dove devono andare orizzontalmente.
+Il valore space-between significa:
+"metti la prima ranocchia tutta a sinistra, l’ultima tutta a destra, e distribuisci le altre in modo che ci sia spazio uguale tra loro".
+In questo livello, le foglie (le ninfee) sono lontane tra loro e vogliamo che le ranocchie si distribuiscano in modo che ci sia lo stesso spazio tra di esse, senza spazio ai bordi.
+🟢 Risultato: le ranocchie si posizionano esattamente sopra le foglie, con spazio regolare solo tra loro, e nessuno ai lati estremi.
+
+USO ALIGN-ITEMS
+-------------------------------------------------------
+Questa proprietà CSS allinea gli elementi verticalmente ed accetta i seguenti valori:
+
+flex-start: Allinea gli elementi all'inizio del loro contenitore.
+flex-end: Allinea gli elementi alla fine del loro contenitore.
+center: Centra gli elementi verticalmente.
+baseline: Gli elementi vengono disposti in modo da allineare le loro linee di base.
+stretch: Gli elementi sono allungati per occupare tutto il contenitore.
+-------------------------------------------------------
+
+LIVELLO 5
+align-items: flex-end;
+📘 Spiegazione elementare:
+La proprietà align-items serve per spostare gli elementi in verticale, cioè su e giù dentro il contenitore.
+Il valore flex-end significa:
+"mandali tutti in fondo (in basso) al contenitore".
+In questo livello, le ranocchie sono in alto, ma le ninfee (le foglie) sono in basso.
+Quindi dobbiamo spostare le ranocchie giù, per farle arrivare sulle foglie.
+🟢 Risultato: tutte le ranocchie si abbassano e si allineano perfettamente con le loro foglie in basso.
+
+LIVELLO 6
+justify-content: center;
+align-items: center;
+📘 Spiegazione elementare:
+justify-content: center; → porta la rana al centro orizzontale (da sinistra a destra).
+align-items: center; → porta la rana al centro verticale (dall’alto verso il basso).
+In questo livello, la rana deve finire esattamente al centro dello stagno, dove si trova la foglia.
+Usando entrambe le proprietà, la rana si muove sia orizzontalmente che verticalmente, centrata in entrambe le direzioni.
+🟢 Risultato: la rana finisce perfettamente sopra la foglia al centro.
+
+LIVELLO 7
+justify-content: space-around;
+align-items: flex-end;
+📘 Spiegazione elementare:
+justify-content: space-around; → distribuisce le ranocchie in orizzontale con spazio uguale intorno a ciascuna (un po’ a sinistra, un po’ a destra).
+align-items: flex-end; → porta tutte le ranocchie in basso, dove si trovano le ninfee.
+In questo livello, le ranocchie devono finire in basso (quindi serve flex-end) e devono essere distribuite con spazio regolare attorno, senza stare troppo attaccate (quindi serve space-around).
+🟢 Risultato: le tre ranocchie vanno in basso e si allineano sopra le foglie con spazio regolare tutto attorno.
+
+USO FLEX-DIRECTION
+-------------------------------------------------------
+Questa proprietà definisce la direzione in cui gli elementi verranno posizionati nel contenitore e accetta i seguenti valori:
+
+row: Gli elementi sono posizionati nella stessa direzione del testo.
+row-reverse: Gli elementi sono posizionati nella direzione opposta al testo.
+column: Gli elementi sono posizionati dall'alto verso il basso.
+column-reverse: Gli elementi sono posizionati dal basso verso l'alto.
+
+ATTENZIONE: 
+La direzione del main axis (cioè l’asse principale su cui si dispongono gli elementi) dipende direttamente dal valore di flex-direction.
+Il main axis (asse principale) è la linea immaginaria lungo la quale Flexbox dispone gli elementi.
+
+flex-direction		Main Axis	                        Cross Axis
+
+row			➡️ Orizzontale da sinistra a destra	⬇️ Verticale dall’alto in basso
+row-reverse		⬅️ Orizzontale da destra a sinistra	⬇️ Verticale dall’alto in basso
+column			⬇️ Verticale dall’alto in basso		➡️ Orizzontale da sinistra a destra
+column-reverse		⬆️ Verticale dal basso verso l’alto	➡️ Orizzontale da sinistra a destra
+
+
+Quando cambia il flex-direction, cambiano anche gli effetti visivi di justify-content e align-items, perché:
+
+justify-content → agisce lungo il main axis
+
+align-items → agisce lungo il cross axis
+
+
+🔄 Ecco cosa succede quando si cambia il flex-direction:
+
+| `flex-direction` | `justify-content` agisce su... 	| `align-items` agisce su...  	|
+| ---------------- | ------------------------------ 	| --------------------------- 	|
+| `row`            | ➡️ Orizzontale (sx → dx)       	| ⬇️ Verticale (alto → basso) 	|
+| `row-reverse`    | ⬅️ Orizzontale (dx → sx)		| ⬇️ Verticale (alto → basso) 	|
+| `column`         | ⬇️ Verticale (alto → basso)		| ➡️ Orizzontale (sx → dx)    	|
+| `column-reverse` | ⬆️ Verticale (basso → alto)    	| ➡️ Orizzontale (sx → dx)    	|
+------------------------------------------------------
+
+LIVELLO 8
+flex-direction: row-reverse;
+📘 Spiegazione elementare:
+La proprietà flex-direction serve per cambiare la direzione in cui gli elementi si dispongono nel contenitore.
+row (default) significa: da sinistra verso destra.
+row-reverse significa: da destra verso sinistra.
+In questo livello, le ranocchie sono posizionate in ordine normale (verde-giallo-rossa), ma le foglie sono nell’ordine inverso (rossa-gialla-verde).
+Per far combaciare le posizioni, dobbiamo invertire l’ordine delle ranocchie, ed è proprio quello che fa row-reverse.
+🟢 Risultato: le ranocchie si muovono da destra verso sinistra e si posizionano sulle foglie nel giusto ordine.
+
+LIVELLO 9
+flex-direction: column;
+📘 Spiegazione elementare:
+La proprietà flex-direction permette di scegliere in quale direzione disporre gli elementi.
+row (default): da sinistra a destra.
+column: dall’alto verso il basso.
+In questo livello, le foglie sono una sotto l’altra, quindi vogliamo che anche le ranocchie si dispongano in verticale, cioè in colonna.
+Usando flex-direction: column, le ranocchie si allineano dall’alto in basso, proprio come le ninfee.
+🟢 Risultato: le tre ranocchie si sistemano in colonna, ognuna sopra la foglia del proprio colore.
+
+USO FLEX-DIRECTION e JUSTIFY-CONTENT
+-------------------------------------------------------
+
+LIVELLO 10
+flex-direction: row-reverse;
+justify-content: flex-end;
+📘 Spiegazione elementare:
+flex-direction: row-reverse; → inverte l’ordine degli elementi, che ora vengono disposti da destra verso sinistra.
+justify-content: flex-end; → spinge gli elementi verso sinistra (perché l'asse è stato invertito).
+Le ranocchie devono essere sistemate da destra a sinistra, e devono raggiungere le foglie che si trovano nella parte sinistra dello stagno.
+Con row-reverse, invertiamo l’ordine.
+Con flex-end, le portiamo tutte dalla parte “giusta” dell’asse invertito.
+🟢 Risultato: le ranocchie raggiungono perfettamente le foglie.
+
+LIVELLO 11
+flex-direction: column;
+justify-content: flex-end;
+📘 Spiegazione elementare:
+flex-direction: column; → cambia la direzione principale da orizzontale (riga) a verticale (colonna), quindi le ranocchie si muovono dall’alto verso il basso.
+justify-content: flex-end; → le spinge in fondo alla colonna, cioè in basso.
+In questo livello, le ninfee sono posizionate in verticale (verde in basso, gialla al centro, rossa in alto), 
+quindi dobbiamo mettere le ranocchie in colonna e farle scendere fino in fondo, così si posizionano correttamente sopra le foglie.
+🟢 Risultato: le ranocchie si dispongono in colonna e scendono fino a combaciare perfettamente con le foglie.
+
+LIVELLO 12
+flex-direction: column-reverse;
+justify-content: space-between;
+📘 Spiegazione elementare:
+flex-direction: column; → organizza le ranocchie in verticale (una colonna).
+justify-content: space-between; → spinge la prima rana in alto, l’ultima in basso, e spazia le altre in mezzo, tutte equidistanti tra loro.
+In questo livello, le ninfee sono disposte in verticale (una sopra, una al centro, una in fondo), quindi serve column.
+Poi vogliamo che le ranocchie si allineino esattamente sulle foglie, con spazi regolari tra loro → quindi usiamo space-between.
+🟢 Risultato: le ranocchie si allineano in verticale sopra le ninfee, con spazi identici tra loro.
+
+USO FLEX-DIRECTION, JUSTIFY-CONTENT e ALIGN-ITEMS
+-------------------------------------------------------
+
+LIVELLO 13
+flex-direction: row-reverse;
+justify-content: center;
+align-items: flex-end;
+📘 Spiegazione elementare:
+flex-direction: row-reverse; → le ranocchie vengono disposte da destra verso sinistra.
+justify-content: center; → le ranocchie si posizionano al centro della riga orizzontale.
+align-items: flex-end; → le ranocchie si abbassano fino in fondo, cioè in basso nel contenitore.
+In questo livello:
+Le foglie sono in basso → quindi serve align-items: flex-end.
+Sono al centro orizzontale, ma in ordine da destra a sinistra → serve flex-direction: row-reverse.
+Infine, per allineare tutto al centro, serve justify-content: center.
+🟢 Risultato: le tre ranocchie si abbassano in fondo allo stagno, si dispongono al centro e si allineano in ordine inverso, perfettamente sopra le ninfee.
+
+
+USO ORDER
+-------------------------------------------------------
+A volte invertire l'ordine di visualizzazione delle righe o delle colonne non è sufficiente. 
+In questi casi possiamo applicare la proprietà order sui singoli elementi. 
+Ogni elemento ha assegnato il valore 0 di default, ma è possibile utilizzare questa proprietà per assegnare un valore intero positivo o negativo.
+
+SU CSS
+.item {
+  order: X;
+}
+
+OPPURE DIRETTAMENTE IN HTML
+<div class="contenitore">
+  <div class="item" style="order: 2">🐶</div>
+  <div class="item" style="order: 1">🐱</div>
+  <div class="item" style="order: 3">🐰</div>
+</div>
+
+Anche se nel codice l’ordine è 🐶 - 🐱 - 🐰, 
+quello che si vede è: 👉 🐱 - 🐶 - 🐰
+
+Perché:
+🐱 ha order: 1 → primo
+🐶 ha order: 2 → secondo
+🐰 ha order: 3 → terzo
+-------------------------------------------------------
+
+LIVELLO 14
+order: 3;
+📘 Spiegazione elementare:
+In Flexbox, ogni elemento ha un valore predefinito di order: 0.
+Gli elementi con un valore di order più alto vengono spostati più avanti nell’ordine di visualizzazione.
+In questo livello:
+La rana gialla è nel mezzo, ma deve andare alla fine, sopra la terza ninfea (gialla).
+Assegnando order: 3 alla rana gialla, la spingiamo oltre le altre, portandola esattamente in fondo.
+🟢 Risultato: la rana gialla si sposta all’ultimo posto e si allinea con la foglia corretta.
+
+LIVELLO 15
+order: -1;
+📘 Spiegazione elementare:
+In Flexbox, gli elementi hanno tutti un ordine predefinito (order: 0).
+Se vogliamo spostare un elemento all'inizio, possiamo usare un valore più basso, ad esempio -1.
+In questo livello:
+La rana rossa deve essere la prima a sinistra, ma adesso è in mezzo al gruppo.
+Impostando order: -1, diciamo a Flexbox: “questa viene prima di tutte”.
+🟢 Risultato: la rana rossa si sposta al primo posto e si allinea con la sua foglia rossa.
+
+USO ALIGN-SELF
+-------------------------------------------------------
+Un'altra proprietà che è possibile applicare ai singoli elementi è align-self. 
+Essa accetta gli stessi valori di align-items.
+------------------------------------------------------
+
+LIVELLO 16
+align-self: flex-end;
+📘 Spiegazione elementare:
+A differenza di align-items (che agisce su tutti gli elementi), la proprietà align-self funziona solo su un elemento specifico.
+In questo caso, vogliamo dire solo alla rana gialla di scendere verso il basso, dove si trova la sua ninfea.
+🔧 Come funziona:
+align-items: flex-start; spinge tutte le rane in alto (valore di default del contenitore).
+align-self: flex-end; dice solo alla rana gialla: “tu vai in basso”.
+🟢 Risultato: la rana gialla si stacca dal gruppo e scende giù, allineandosi alla sua foglia.
+
+USO ORDER E ALIGN-SELF
+-------------------------------------------------------
+
+LIVELLO 17
+order: 1;
+align-self: flex-end;
+📘 Spiegazione elementare:
+In questo livello, dobbiamo spostare solo le rane gialle in basso a destra, verso le loro ninfee.
+Per farlo, usiamo due proprietà:
+order → cambia la posizione orizzontale dell’elemento.
+align-self → sovrascrive l’allineamento verticale solo per quell’elemento.
+🔧 Come funziona:
+order: 1; → dice alla rana gialla: “vai dopo la rana con order: 0 (verde)”.
+align-self: flex-end; → dice alla rana gialla: “allineati in basso nel contenitore”.
+🟢 Risultato:
+La rane gialle si spostano a destra e scendono verso il basso, finendo esattamente sulle loro ninfee gialle.
+
+USO FLEX-WRAP
+-------------------------------------------------------
+flex-wrap è una proprietà CSS utilizzata nei contenitori flex (display: flex) per determinare se gli elementi figli 
+devono restare su una singola riga oppure possono andare a capo quando non c'è spazio sufficiente.
+
+1. flex-wrap: nowrap;      (predefinito)
+   - Tutti gli elementi restano su una sola riga.
+   - Se lo spazio è insufficiente, gli elementi si comprimono per adattarsi.
+   - Nessun ritorno a capo è permesso.
+
+2. flex-wrap: wrap;
+   - Gli elementi si distribuiscono su più righe, andando a capo quando necessario.
+   - Le righe si dispongono dall’alto verso il basso (comportamento naturale nei layout top-down).
+
+3. flex-wrap: wrap-reverse;
+   - Comportamento simile a wrap, ma le righe si distribuiscono dal basso verso l’alto.
+   - Utile in layout specifici dove si vuole l’inversione dell’asse verticale.
+
+Effetti pratici:
+- flex-wrap influisce solo se la dimensione orizzontale (nel caso di flex-direction: row) non è sufficiente a contenere tutti gli elementi inline.
+- In combinazione con flex-direction, determina l’orientamento e la direzione di overflow degli elementi flex.
+
+Esempio:
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+------------------------------------------------------
+
+LIVELLO 18
+flex-wrap: wrap; 
+📘 Spiegazione elementare:
+Le rane sono troppo numerose per stare su una sola riga. Per sistemarle in più righe, dobbiamo dire al contenitore di permettere il ritorno a capo degli elementi.
+🔧 Come funziona:
+flex-wrap: nowrap; → valore predefinito: non va a capo e schiaccia tutto su una riga.
+flex-wrap: wrap; → permette di andare a capo quando non c’è spazio sufficiente.
+🟢 Risultato:
+Le rane si distribuiscono su due righe, tornando sulle loro ninfee verdi e rosse, come desiderato.
+
+USO FLEX-DIRECTION E FLEX-WRAP
+-------------------------------------------------------
+
+LIVELLO 19
+flex-direction: column;
+flex-wrap: wrap;
+📘 Spiegazione elementare:
+Per ottenere tre colonne ordinate (una per colore), dobbiamo cambiare la direzione del contenitore e permettere il ritorno a capo.
+🔧 Come funziona:
+flex-direction: column; → dispone le rane dall’alto verso il basso, creando una colonna verticale.
+flex-wrap: wrap; → permette di andare a capo, formando più colonne.
+🟢 Risultato:
+Le rane vengono ordinate in tre colonne verticali: una verde, una rossa e una gialla, perfettamente allineate con le loro ninfee.
+
+USO FLEX-FLOW 
+-------------------------------------------------------
+flex-flow è una proprietà shorthand (abbreviata) in CSS che combina due proprietà flexbox in una sola riga:
+
+  1. flex-direction
+  2. flex-wrap
+
+Sintassi:
+  flex-flow: <flex-direction> <flex-wrap>;
+
+Esempi validi:
+  flex-flow: row nowrap;        → (default) disposizione orizzontale su una sola riga
+  flex-flow: column wrap;       → disposizione verticale, con elementi che vanno a capo
+  flex-flow: row-reverse wrap;  → orizzontale da destra a sinistra, con ritorno a capo
+  flex-flow: column-reverse nowrap; → verticale dal basso verso l’alto, su una riga unica
+
+Dettagli:
+- flex-direction determina l’asse principale e l’orientamento degli elementi (es: row, column).
+- flex-wrap indica se gli elementi devono andare a capo quando non c’è spazio.
+
+Nota:
+- L’ordine dei valori conta: prima `flex-direction`, poi `flex-wrap`.
+- È equivalente a scrivere separatamente:
+    flex-direction: row;
+    flex-wrap: wrap;
+
+Esempio pratico:
+.container {
+  display: flex;
+  flex-flow: row wrap;
+}
+-------------------------------------------------------
+
+LIVELLO 20
+flex-flow: column wrap;
+📘 Spiegazione elementare:
+Invece di usare separatamente flex-direction e flex-wrap, possiamo usare la scorciatoia flex-flow, che li combina in un'unica dichiarazione.
+🔧 Come funziona:
+flex-flow: column wrap;
+→ è l’equivalente di scrivere:
+flex-direction: column;  
+flex-wrap: wrap;
+→ quindi crea colonne verticali con rientro a capo.
+🟢 Risultato:
+Le rane si dispongono esattamente come nel livello precedente: in tre colonne verticali allineate alle loro ninfee, ma stavolta il codice è più compatto.
+
+USO ALIGN-CONTENT
+-------------------------------------------------------
+align-content si utilizza per decidere come le linee verranno distanziate tra di loro. 
+
+Questa proprietà accetta i seguenti valori:
+
+flex-start: Le linee sono raggruppate all'inizio del contenitore.
+flex-end: Le linee sono raggruppate alla fine del contenitore.
+center: Le linee vengono centrate verticalmente nel contenitore.
+space-between: Le linee occupano tutto lo spazio del contenitore e sono separate tra di loro dalla stessa quantità di spazio.
+space-around: Le linee sono separate dalle altre linee, e dall'inizio e dalla fine del contenitore dalla stessa quantità di spazio.
+stretch: Le linee vengono allungate per occupare tutto lo spazio disponibile.
+
+Questo potrebbe creare confusione, ma align-content determina lo spazio tra le linee 
+mentre align-items determina come gli elementi nell'insieme vengono disposti nel contenitore. 
+Se c'è una sola linea, align-content non ha alcun effetto.
+-------------------------------------------------------
+
+LIVELLO 21
+align-content: flex-start;
+📘 Spiegazione elementare:
+In questo livello le rane si trovano su più righe, ma sono sparse verticalmente. 
+Per allineare le righe nella parte alta del contenitore, dobbiamo usare la proprietà align-content.
+🔧 Come funziona:
+flex-wrap: wrap; → permette alle rane di andare su più righe, invece di restare su una sola riga compressa.
+align-content: flex-start; → spinge tutte le righe verso l’alto, allineandole all'inizio del contenitore.
+🟢 Risultato:
+Le righe si dispongono compatte nella parte superiore dello stagno, in modo ordinato e preciso. Tutte le rane si ritrovano sulle loro ninfee.
+
+LIVELLO 22
+align-content: flex-end;
+📘 Spiegazione elementare:
+In questo livello, le ninfee si sono spostate in fondo allo stagno. 
+Dobbiamo dire alle righe (non ai singoli elementi) di allinearsi in basso, usando align-content.
+🔧 Come funziona:
+flex-wrap: wrap; → consente alle rane di andare su più righe.
+align-content: flex-end; → allinea tutte le righe in fondo al contenitore (cioè in basso).
+🟢 Risultato:
+Tutte le righe scendono e si dispongono ordinate nella parte inferiore dello stagno. Le rane raggiungono le loro ninfee.
+
+USO DI FLEX-DIRECTION E ALIGN-CONTENT
+-------------------------------------------------------
+
+LIVELLO 23
+flex-direction: column-reverse;
+align-content: center;
+📘 Spiegazione elementare:
+Le rane sono sparse, ma dobbiamo farle "tornare a casa", ovvero scendere sulle loro ninfee. 
+Per farlo, dobbiamo usare sia la direzione delle colonne (flex-direction) che il posizionamento verticale (align-content).
+🔧 Come funziona:
+flex-direction: column-reverse; → le colonne partono dal basso e salgono.
+align-content: center; → centra tutte le colonne all'interno del contenitore.
+🟢 Risultato:
+Le rane si allineano dal basso verso l'alto, esattamente al centro, ritrovando le proprie ninfee colorate.
+
+
+USO DI TUTTE LE PROPRIETA' COMBINATE
+-------------------------------------------------------
+
+LIVELLO 24
+flex-direction: column-reverse;
+flex-wrap: wrap-reverse;
+justify-content: center;
+align-content: space-between;
+
+oppure
+
+flex-flow: column-reverse wrap-reverse;
+justify-content: center;
+align-content: space-between;
+
+📘 Spiegazione elementare:
+Nel livello finale, le rane devono essere disposte in colonne verticali, 
+partendo dal basso e distribuendosi da destra verso sinistra, con spazi uguali tra le colonne.
+Per ottenere questo risultato, bisogna combinare più proprietà in modo accurato.
+🔧 Come funziona:
+flex-direction: column-reverse; → imposta la direzione principale dal basso verso l’alto.
+flex-wrap: wrap-reverse; → fa sì che le colonne si avvolgano da destra verso sinistra.
+justify-content: center; → centra verticalmente le rane all’interno delle colonne.
+align-content: space-between; → spazia le colonne orizzontalmente in modo uniforme nel contenitore.
+🟢 Risultato:
+Le rane vengono disposte su più colonne, dal basso verso l’alto e da destra verso sinistra, con spazi regolari tra le colonne.
+Tutte finiscono correttamente sulle loro ninfee. ✅🐸
+
+
+
+

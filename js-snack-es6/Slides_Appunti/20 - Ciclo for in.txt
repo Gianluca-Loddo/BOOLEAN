@@ -1,0 +1,41 @@
+1. Creazione di un oggetto
+
+const palla = {
+  "prezzo": 12,
+  "tipo": "pallina da golf"
+};
+
+Qui stai creando un oggetto chiamato `palla`, che contiene due proprietà:
+•	- "prezzo" con valore 12
+•	- "tipo" con valore "pallina da golf"
+In pratica è come se dicessi: La palla costa 12 ed è una pallina da golf.
+2. Ciclo for...in
+
+for (let key in palla) {
+  console.log(key);
+  console.log(palla[key]);
+}
+
+Questo ciclo serve per scorrere tutte le proprietà dell'oggetto `palla`.
+Vediamo cosa succede ad ogni iterazione:
+🔁 Primo giro:
+- key è "prezzo"
+- console.log(key) → stampa: prezzo
+- console.log(palla[key]) → stampa: 12
+🔁 Secondo giro:
+- key è "tipo"
+- console.log(key) → stampa: tipo
+- console.log(palla[key]) → stampa: pallina da golf
+🔎 In sintesi
+
+Il codice stampa sul terminale:
+prezzo
+12
+tipo
+pallina da golf
+
+🧠 Tradotto in parole semplici
+
+Per ogni proprietà nell’oggetto `palla`, stampa prima il nome della proprietà (come "prezzo") 
+e poi il suo valore (come 12).
+

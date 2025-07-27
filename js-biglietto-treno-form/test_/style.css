@@ -1,0 +1,83 @@
+body {
+  background-color: #be0f47;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+}
+
+.form-container {
+  background: white;
+  color: #be0f47;
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+  text-align: left;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+input, select {
+  padding: 10px;
+  border: 1px solid #be0f47;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.generate {
+  background-color: #fff;
+  color: #be0f47;
+  border: 2px solid #be0f47;
+  font-weight: bold;
+}
+
+.cancel {
+  background-color: #ccc;
+  color: black;
+}
+
+.ticket-container {
+  background-color: white;
+  color: black;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+  text-align: left;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ccc;
+}
+
+th {
+  background-color: #be0f47;
+  color: white;
+}

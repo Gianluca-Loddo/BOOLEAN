@@ -1,0 +1,427 @@
+FLEXBOX DEFENSE (Soluzioni e Spiegazioni)
+Gianluca Loddo
+
+LIVELLO 1
+-------------------------------------------------------
+justify-content: center;
+📘 Spiegazione elementare:
+Le torrette devono essere posizionate al centro del contenitore orizzontale, così da difendere perfettamente l’ingresso del percorso.
+🔧 Come funziona:
+display: flex; → attiva il comportamento flexbox
+justify-content: center; → allinea al centro dell’asse principale (in questo caso, asse orizzontale)
+🟢 Risultato:
+Le torrette si spostano al centro, pronte a colpire i nemici in arrivo sul percorso!
+
+LIVELLO 2
+-------------------------------------------------------
+1. justify-content: flex-end;
+2. justify-content: center;
+3. justify-content: flex-end;
+📘 Spiegazione elementare:
+Il posizionamento delle torri si gestisce con justify-content, che muove gli elementi lungo l’asse principale (orizzontale).
+In questo livello, ogni torre deve essere allineata per intercettare i nemici sul percorso.
+🔧 Come funziona:
+flex-end: spinge le torri verso destra (dove si trova la strada).
+center: posiziona le torri al centro della riga.
+🟢 Risultato:
+Le tre torrette si dispongono perfettamente lungo il bordo destro e centrale del percorso, pronte a difendere l’area.
+
+LIVELLO 3
+-------------------------------------------------------
+1. justify-content: center;
+2. justify-content: space-between;
+📘 Spiegazione elementare:
+Nel livello 3, dobbiamo evitare che le torrette siano posizionate sul percorso. 
+Una torre lampeggia di rosso perché è in una posizione sbagliata. 
+Per risolvere il problema, dobbiamo allineare correttamente le torrette usando justify-content.
+🔧 Come funziona:
+justify-content: center; → Centra le torrette lungo l’asse principale.
+justify-content: space-between; → Distribuisce le torrette lasciando spazio uguale tra loro e ai bordi, coprendo tutta la larghezza.
+Nel nostro caso:
+.tower-group-1 → deve essere centrata: center
+.tower-group-2 → le torrette devono essere distribuite agli estremi, quindi: space-between 
+🟢 Risultato:
+Tutte le torrette si posizionano correttamente, evitando il percorso e prontissime a fermare i nemici!
+
+LIVELLO 4
+-------------------------------------------------------
+1. align-items: flex-end;
+2. align-items: flex-end;
+📘 Spiegazione elementare:
+In questo livello dobbiamo posizionare le torrette verso il basso, evitando che siano troppo lontane dal percorso. 
+Usiamo la proprietà align-items, che lavora sull’asse trasversale (verticale) del contenitore Flexbox.
+🔧 Come funziona:
+align-items: flex-end; → spinge gli elementi in fondo al contenitore, cioè in basso nel nostro caso.
+🟢 Risultato:
+Le torrette in entrambi i gruppi si spostano correttamente in basso, vicine al percorso e pronte a colpire i nemici.
+
+LIVELLO 5
+-------------------------------------------------------
+1. justify-content: space-around;
+   align-items: flex-end;
+2. justify-content: center;
+3. align-items: center;
+   justify-content: center;
+📘 Spiegazione elementare:
+Per questo livello, bisogna combinare justify-content (per l’allineamento orizzontale sull’asse principale) 
+e align-items (per l’allineamento verticale sull’asse incrociato) in modo diverso per ciascun gruppo di torrette.
+🔧 Come funziona:
+justify-content: space-around; distribuisce le torrette lasciando spazio ai lati e tra gli elementi.
+align-items: flex-end; le allinea verso il basso.
+justify-content: center; allinea al centro orizzontale.
+align-items: center; allinea al centro verticale.
+🟢 Risultato:
+Le torrette del gruppo 1 sono distribuite orizzontalmente in basso.
+Quelle del gruppo 2 sono centrate orizzontalmente.
+Quelle del gruppo 3 sono perfettamente al centro del box, sia in orizzontale che in verticale.
+
+LIVELLO 6
+-------------------------------------------------------
+justify-content: space-between;
+align-items: center;
+📘 Spiegazione elementare:
+Dobbiamo distribuire le torrette lungo tutta la riga, lasciando spazio tra di loro, e tenerle ben centrate in verticale nel campo verde.
+🔧 Come funziona:
+justify-content: space-between; → distribuisce le torrette in modo uniforme da sinistra a destra.
+align-items: center; → allinea le torrette esattamente al centro in verticale.
+🟢 Risultato:
+Le torrette si posizionano agli estremi e al centro orizzontale del contenitore, tutte perfettamente allineate in verticale.
+
+LIVELLO 7
+-------------------------------------------------------
+1. flex-direction: column;
+2. flex-direction: column;
+📘 Spiegazione elementare:
+In questo livello dobbiamo posizionare le torrette una sopra l’altra, affinchè siano disposte lungo il percorso del nemico. 
+Per farlo, dobbiamo ruotare l’asse principale usando flex-direction.
+🔧 Come funziona:
+La proprietà flex-direction cambia l’orientamento principale dei contenuti all’interno del contenitore.
+flex-direction: column; → Le torrette vengono disposte in verticale (una sotto l’altra), partendo dall’alto.
+🟢 Risultato:
+Le torrette vengono sistemate in colonna e fuori dal percorso, impedendo ai nemici di passare e permettendoti di iniziare l’ondata in sicurezza.
+
+LIVELLO 8
+-------------------------------------------------------
+1. flex-direction: column;
+2. flex-direction: column;
+   align-items: center;
+📘 Spiegazione elementare:
+In questo livello dobbiamo posizionare due gruppi di torrette in verticale. 
+Il primo gruppo va semplicemente disposto in colonna, mentre il secondo deve anche essere centrato orizzontalmente.
+🔧 Come funziona:
+flex-direction: column; → cambia l’asse principale da orizzontale a verticale (torrette disposte dall’alto in basso).
+align-items: center; → centra le torrette sull’asse trasversale (in questo caso orizzontale), utile per posizionarle bene dentro al contenitore.
+🟢 Risultato:
+Il primo gruppo si dispone lungo il bordo sinistro (verticale), il secondo è perfettamente centrato in verticale e in orizzontale. 
+Posizione difensiva perfetta!
+
+LIVELLO 9
+-------------------------------------------------------
+1. flex-direction: row-reverse;
+   justify-content: space-around;
+2. flex-direction: row-reverse;
+   align-items: center;
+   justify-content: space-around;
+
+📘 Spiegazione elementare:
+Alcuni gruppi di torrette devono essere invertiti rispetto al consueto ordine. 
+Per farlo, bisogna usare row-reverse, che cambia la direzione dell’asse principale. 
+Poi si combina justify-content e align-items per distribuirle correttamente.
+🔧 Come funziona:
+Nel primo gruppo (.tower-group-1), le torrette si dispongono da destra verso sinistra con spazio uniforme.
+Nel secondo gruppo (.tower-group-2) si usa nuovamente row-reverse ma si aggiunge align-items: center per centrare il contenuto verticalmente.
+flex-direction: row-reverse; → inverte l'ordine delle torrette da destra a sinistra
+justify-content: space-around; → distribuisce le torrette con spazi uguali intorno
+align-items: center; → centra verticalmente il gruppo 2
+🟢 Risultato:
+Le torrette sono correttamente allineate e distribuite, in modo speculare rispetto al consueto orientamento, 
+pronte a coprire entrambi i lati del percorso!
+
+LIVELLO 10
+-------------------------------------------------------
+.tower-group-1 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tower-1-2 {
+  order: 1;
+}
+
+.tower-group-2 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tower-2-1 {
+  order: 1;
+}
+
+📘 Spiegazione elementare:
+Ora bisogna riordinare le torrette dentro ogni gruppo. Anche se sono in un display: flex, 
+puoi cambiare il loro ordine con la proprietà order. Ogni elemento ha ordine predefinito pari a 0, 
+ma si può assegnare valori personalizzati per modificarne la posizione.
+🔧 Come funziona:
+Per entrambi i gruppi, le torrette sono distribuite con justify-content: space-around; per avere spazi uguali intorno.
+Poi si assegna order: 1 all’elemento centrale, così viene spostato in fondo (mentre gli altri due, avendo order: 0, restano davanti).
+justify-content: space-around; → spazi distribuiti uniformemente tra e attorno agli elementi
+order: 1; → sposta il secondo elemento alla fine del gruppo
+🟢 Risultato:
+Le torrette sono perfettamente disposte ai lati, lasciando libera la zona centrale del percorso. 
+Il posizionamento è corretto e si può avviare l'ondata senza errori. 
+
+LIVELLO 11
+-------------------------------------------------------
+.tower-group-1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tower-1-1 {
+  align-self: flex-end;
+}
+
+.tower-1-3 {
+  align-self: flex-end;
+}
+
+📘 Spiegazione elementare:
+In questo livello è necessario posizionare torrette singole in punti specifici. 
+Per farlo usi justify-content per distribuire i gruppi e align-self per controllare il posizionamento verticale dei singoli elementi 
+(sovrascrivendo align-items del contenitore, se presente).
+🔧 Come funziona:
+Il contenitore .tower-group-1 usa justify-content: space-between; per distribuire le torrette orizzontalmente (prima, ultima, centro ecc.).
+Le torrette .tower-1-1 e .tower-1-3 usano align-self: flex-end; per spostarsi in basso nel contenitore (asse trasversale).
+align-self permette di allineare singolarmente gli elementi lungo l’asse trasversale (verticale in questo caso).
+flex-end li posiziona in basso rispetto al contenitore.
+🟢 Risultato:
+Le torrette laterali sono in basso, le altre centrali in alto: la posizione strategica è perfetta per coprire l’intero perimetro del passaggio nemico. 
+
+LIVELLO 12
+-------------------------------------------------------
+.tower-group-1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Torretta in alto a sinistra */
+.tower-1-1 {
+  order: -1;
+}
+
+/* Torretta al centro, posizionata al centro verticalmente */
+.tower-1-2 {
+  order: 1;
+  align-self: center;
+}
+
+/* Torretta al centro destra, sempre centrata verticalmente */
+.tower-1-3 {
+  align-self: center;
+}
+
+/* Torretta più a destra, sempre centrata */
+.tower-1-4 {
+  align-self: center;
+}
+
+/* Torretta in basso a destra */
+.tower-1-5 {
+  order: 2;
+  align-self: flex-end;
+}
+📘 Spiegazione elementare:
+In questo ultimo livello è necessario controllare con precisione sia la posizione orizzontale che verticale delle torrette e anche il loro ordine di apparizione, usando:
+justify-content per la distribuzione orizzontale,
+align-self per il posizionamento verticale di ogni torretta,
+order per cambiare la sequenza di visualizzazione.
+🔧 Come funziona:
+justify-content: space-between; distribuisce le torrette lungo l’asse principale (orizzontale).
+order modifica la sequenza di posizionamento, spostando .tower-1-1 all’inizio e .tower-1-5 alla fine.
+align-self viene usato per gestire l’altezza di ogni torretta: alcune sono centrate (center), altre in basso (flex-end).
+🟢 Risultato:
+Tutte le torrette sono perfettamente distribuite, con le altezze ottimizzate per coprire ogni angolo del percorso. 
+Difesa perfetta: la wave finale è superata! 🏆
+
+=======================================================
+TEORIA
+=======================================================
+
+JUSTIFY-CONTENT
+-------------------------------------------------------
+Questa proprietà allinea gli elementi orizzontalmente e accetta i seguenti valori:
+
+flex-start: Allinea gli elementi alla sinistra del contenitore.
+flex-end: Allinea gli elementi alla destra del contenitore.
+center: Allinea gli elementi al centro del contenitore.
+space-between: Separa gli elementi con uguale spazio tra di loro.
+space-around: Separa gli elementi con uguale spazio attorno ad essi.
+-------------------------------------------------------
+
+ALIGN-ITEMS
+-------------------------------------------------------
+Questa proprietà CSS allinea gli elementi verticalmente ed accetta i seguenti valori:
+
+flex-start: Allinea gli elementi all'inizio del loro contenitore.
+flex-end: Allinea gli elementi alla fine del loro contenitore.
+center: Centra gli elementi verticalmente.
+baseline: Gli elementi vengono disposti in modo da allineare le loro linee di base.
+stretch: Gli elementi sono allungati per occupare tutto il contenitore.
+-------------------------------------------------------
+
+FLEX-DIRECTION
+-------------------------------------------------------
+Questa proprietà definisce la direzione in cui gli elementi verranno posizionati nel contenitore e accetta i seguenti valori:
+
+row: Gli elementi sono posizionati nella stessa direzione del testo.
+row-reverse: Gli elementi sono posizionati nella direzione opposta al testo.
+column: Gli elementi sono posizionati dall'alto verso il basso.
+column-reverse: Gli elementi sono posizionati dal basso verso l'alto.
+
+ATTENZIONE: 
+La direzione del main axis (cioè l’asse principale su cui si dispongono gli elementi) dipende direttamente dal valore di flex-direction.
+Il main axis (asse principale) è la linea immaginaria lungo la quale Flexbox dispone gli elementi.
+
+flex-direction		Main Axis	                        Cross Axis
+
+row			➡️ Orizzontale da sinistra a destra	⬇️ Verticale dall’alto in basso
+row-reverse		⬅️ Orizzontale da destra a sinistra	⬇️ Verticale dall’alto in basso
+column			⬇️ Verticale dall’alto in basso		➡️ Orizzontale da sinistra a destra
+column-reverse		⬆️ Verticale dal basso verso l’alto	➡️ Orizzontale da sinistra a destra
+
+
+Quando cambia il flex-direction, cambiano anche gli effetti visivi di justify-content e align-items, perché:
+
+justify-content → agisce lungo il main axis
+
+align-items → agisce lungo il cross axis
+
+
+🔄 Ecco cosa succede quando si cambia il flex-direction:
+
+| `flex-direction` | `justify-content` agisce su... 	| `align-items` agisce su...  	|
+| ---------------- | ------------------------------ 	| --------------------------- 	|
+| `row`            | ➡️ Orizzontale (sx → dx)       	| ⬇️ Verticale (alto → basso) 	|
+| `row-reverse`    | ⬅️ Orizzontale (dx → sx)		| ⬇️ Verticale (alto → basso) 	|
+| `column`         | ⬇️ Verticale (alto → basso)		| ➡️ Orizzontale (sx → dx)    	|
+| `column-reverse` | ⬆️ Verticale (basso → alto)    	| ➡️ Orizzontale (sx → dx)    	|
+------------------------------------------------------
+
+ORDER
+-------------------------------------------------------
+A volte invertire l'ordine di visualizzazione delle righe o delle colonne non è sufficiente. 
+In questi casi possiamo applicare la proprietà order sui singoli elementi. 
+Ogni elemento ha assegnato il valore 0 di default, ma è possibile utilizzare questa proprietà per assegnare un valore intero positivo o negativo.
+
+SU CSS
+.item {
+  order: X;
+}
+
+OPPURE DIRETTAMENTE IN HTML
+<div class="contenitore">
+  <div class="item" style="order: 2">🐶</div>
+  <div class="item" style="order: 1">🐱</div>
+  <div class="item" style="order: 3">🐰</div>
+</div>
+
+Anche se nel codice l’ordine è 🐶 - 🐱 - 🐰, 
+quello che si vede è: 👉 🐱 - 🐶 - 🐰
+
+Perché:
+🐱 ha order: 1 → primo
+🐶 ha order: 2 → secondo
+🐰 ha order: 3 → terzo
+-------------------------------------------------------
+
+ALIGN-SELF
+-------------------------------------------------------
+Un'altra proprietà che è possibile applicare ai singoli elementi è align-self. 
+Essa accetta gli stessi valori di align-items.
+------------------------------------------------------
+
+FLEX-WRAP
+-------------------------------------------------------
+flex-wrap è una proprietà CSS utilizzata nei contenitori flex (display: flex) per determinare se gli elementi figli 
+devono restare su una singola riga oppure possono andare a capo quando non c'è spazio sufficiente.
+
+1. flex-wrap: nowrap;      (predefinito)
+   - Tutti gli elementi restano su una sola riga.
+   - Se lo spazio è insufficiente, gli elementi si comprimono per adattarsi.
+   - Nessun ritorno a capo è permesso.
+
+2. flex-wrap: wrap;
+   - Gli elementi si distribuiscono su più righe, andando a capo quando necessario.
+   - Le righe si dispongono dall’alto verso il basso (comportamento naturale nei layout top-down).
+
+3. flex-wrap: wrap-reverse;
+   - Comportamento simile a wrap, ma le righe si distribuiscono dal basso verso l’alto.
+   - Utile in layout specifici dove si vuole l’inversione dell’asse verticale.
+
+Effetti pratici:
+- flex-wrap influisce solo se la dimensione orizzontale (nel caso di flex-direction: row) non è sufficiente a contenere tutti gli elementi inline.
+- In combinazione con flex-direction, determina l’orientamento e la direzione di overflow degli elementi flex.
+
+Esempio:
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+------------------------------------------------------
+
+FLEX-FLOW 
+-------------------------------------------------------
+flex-flow è una proprietà shorthand (abbreviata) in CSS che combina due proprietà flexbox in una sola riga:
+
+  1. flex-direction
+  2. flex-wrap
+
+Sintassi:
+  flex-flow: <flex-direction> <flex-wrap>;
+
+Esempi validi:
+  flex-flow: row nowrap;        → (default) disposizione orizzontale su una sola riga
+  flex-flow: column wrap;       → disposizione verticale, con elementi che vanno a capo
+  flex-flow: row-reverse wrap;  → orizzontale da destra a sinistra, con ritorno a capo
+  flex-flow: column-reverse nowrap; → verticale dal basso verso l’alto, su una riga unica
+
+Dettagli:
+- flex-direction determina l’asse principale e l’orientamento degli elementi (es: row, column).
+- flex-wrap indica se gli elementi devono andare a capo quando non c’è spazio.
+
+Nota:
+- L’ordine dei valori conta: prima `flex-direction`, poi `flex-wrap`.
+- È equivalente a scrivere separatamente:
+    flex-direction: row;
+    flex-wrap: wrap;
+
+Esempio pratico:
+.container {
+  display: flex;
+  flex-flow: row wrap;
+}
+-------------------------------------------------------
+
+ALIGN-CONTENT
+-------------------------------------------------------
+align-content si utilizza per decidere come le linee verranno distanziate tra di loro. 
+
+Questa proprietà accetta i seguenti valori:
+
+flex-start: Le linee sono raggruppate all'inizio del contenitore.
+flex-end: Le linee sono raggruppate alla fine del contenitore.
+center: Le linee vengono centrate verticalmente nel contenitore.
+space-between: Le linee occupano tutto lo spazio del contenitore e sono separate tra di loro dalla stessa quantità di spazio.
+space-around: Le linee sono separate dalle altre linee, e dall'inizio e dalla fine del contenitore dalla stessa quantità di spazio.
+stretch: Le linee vengono allungate per occupare tutto lo spazio disponibile.
+
+Questo potrebbe creare confusione, ma align-content determina lo spazio tra le linee 
+mentre align-items determina come gli elementi nell'insieme vengono disposti nel contenitore. 
+Se c'è una sola linea, align-content non ha alcun effetto.
+-------------------------------------------------------
+
+
+
+
+
+

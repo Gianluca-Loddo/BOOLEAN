@@ -1,0 +1,23 @@
+header {
+    background-color: white;
+    text-align: center;
+    border: 2px solid orange;
+}
+
+#page-title {
+    font-family: 'WDXL Lubrifont TC'; /* ho richiamato il carattere importato da google*/
+    font-size: 40px;
+}
+
+/*gli id vengono richiamati con il cancelletto*/
+#logo {
+    border-radius: 50%;
+    width: 200px;
+}
+
+/*le classi vengono richiamente con il punto*/
+.title {
+
+    color: orange;
+
+}

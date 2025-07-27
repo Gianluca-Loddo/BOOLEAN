@@ -1,0 +1,137 @@
+/* RESET DELLA PAGINA: il selettore universale(*) applica a tutti gli
+elementi della pagina, il margin 0 e il padding toglie tutti i valori
+di default e la regola box sizing Dice al browser: "Quando imposti width o height,
+includi anche padding e bordi nel calcolo."*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #fff;
+    /*se non specifico il colore dell'header questo mi farà vedere il colore di sfondo del body
+    in quanto di default il colore della pagina è trasparente: background-color: transparent;*/
+    padding: 10px 10px;
+    /* padding: 10px 10px; 10px sopra e sotto, 10px a destra e sinistra */
+    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif;
+    specifica il tipo di carattere da utilizzare per il testo nell'header. 
+    se non riuscisse a caricare Roboto, utilizzerà un carattere sans-serif di default */
+}
+
+header img {
+    vertical-align: middle;
+    /* allinea l'immagine verticalmente al centro: 
+    questa proprietà funziona solo su elementi inline o inline-block
+    in pratica, non eredita il comportamento su tutto il contenuto del blocco
+    come invece fanno font-family o color*/
+}
+
+header h1 {
+    display: inline-block;
+    /* rende l'elemento h1 un elemento inline-block */
+    /* in modo che possa essere allineato con l'immagine */
+    vertical-align: middle;
+    /* allinea il testo verticalmente al centro rispetto all'immagine */
+    margin-left: 10px;
+    /* spazio a sinistra rispetto all'immagine scritto meglio*/
+    /*altro modo per scrivere il margin-left:  
+    margin: 0 0 0 10px;  spazio a sinistra rispetto all'immagine: margin: TOP  RIGHT  BOTTOM  LEFT */
+    color: #333;
+    font-size: 40px;
+}
+
+
+
+
+body {
+    background-color: #f6f8f9;
+    /* colore di sfondo della pagina: grigino molto chiaro, quasi bianco */
+}
+
+.topper_button_container {
+    font-family: 'Roboto', sans-serif;
+    /* specifica il tipo di carattere da utilizzare per il testo nel contenitore del bottone */
+    background-color: white;
+    width: 100%;
+    /* larghezza del contenitore della lista: 100% del suo elemento padre */
+    max-width: 800px;
+    /* larghezza massima del contenitore della lista: 800px */
+    /* se il contenitore è più largo di 800px, si adatterà a 800px */
+    margin: 50px auto 2px;
+    /* margine superiore di 50px, destro e sinistro automatici per centrare, 
+    inferiore di 2px */
+
+    /*perchè il margin auto possa funzionare,
+    il contenitore deve avere una larghezza definita (width o max-width)*/
+
+    padding: 20px 40px 10px;
+    /* padding: 20px 40px 10px; 20px sopra, 40px a destra e sinistra, 10px sotto*/
+    border-radius: 5px 5px 0 0;
+    /* arrotonda gli angoli superiori del contenitore del bottone: SINISTRA E DESTRA */
+}
+
+
+.topper_button {
+    background-color: #47adf1;
+    color: white;
+    padding: 10px 20px;
+    /* padding: 10px 20px; 10px sopra e sotto, 20px a destra e sinistra 
+    È lo spazio interno tra il contenuto (es: il testo "Add Task") e il bordo del bottone.*/
+    border: solid 1px #47adf1;
+    /* il bordo del bottone è di 1px, solido e dello stesso colore del bottone 
+    rimuove il bordo predefinito che  i browser aggiungono ai bottoni.
+    Di solito quel bordo è grigio e ha uno stile "old-style".
+    Invece di inserire le specifiche si può usare "none" per il bordo, 
+    così il bottone è più moderno e si adatta meglio al design personalizzato*/
+    border-radius: 5px;
+    /* arrotonda gli angoli del bottone 
+    Più alto è il valore, più rotondi saranno gli angoli*/
+    font-size: 16px;
+    cursor: pointer;
+    /* cambia il cursore in una mano quando si passa sopra il bottone,
+    indicando che è cliccabile */
+}
+
+.topper_button.invisible {
+    /* Applica lo stile solo agli elementi che hanno sia topper_button che invisible come classi
+    nella gerarchia applica lo stile topper_button sovrascrivendo le proprietà specificate in invisible */
+    background-color: transparent;
+    /* rende il bottone invisibile, ma mantiene lo spazio occupato */
+    color: #c5cbcf;
+    border: solid 1px currentColor;
+    /* il bordo del bottone è di 1px, solido e dello stesso colore del bottone 
+    color è un valore EREDITARIO (differentemente da background-color) e dunque si può
+    utilizzare "currentColor" per mantenere la coerenza con il colore del testo */
+}
+
+.todo_list_container {
+    font-family: 'Roboto', sans-serif;
+    /* specifica il tipo di carattere da utilizzare per il testo nella lista */
+    color: #333;
+    /* colore del testo della lista: grigio scuro */
+    
+    
+    background-color: white;
+    width: 100%;
+    /* larghezza del contenitore della lista: 100% del suo elemento padre */
+    max-width: 800px;
+    /* larghezza massima del contenitore della lista: 800px */
+    /* se il contenitore è più largo di 800px, si adatterà a 800px */
+    margin: 0 auto 2px;
+    /* margine superiore di 0px, destro e sinistro automatici per centrare, 
+    inferiore di 2px */
+       
+    
+    padding: 20px 40px 20px;
+    /* padding: 20px 40px 20px; 20px sopra, 40px a destra e sinistra, 20px sotto*/
+    border-radius: 0 0 5px 5px;
+    /* arrotonda gli angoli inferiori del contenitore della lista: DESTRA E SINISTRA */
+}
+
+.todo_list {
+    list-style: none;
+    /* rimuove i punti elenco predefiniti della lista */
+}
