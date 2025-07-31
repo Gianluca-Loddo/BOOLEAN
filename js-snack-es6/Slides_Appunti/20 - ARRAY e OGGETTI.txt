@@ -1,0 +1,195 @@
+In JavaScript, sia gli array che gli oggetti sono strutture dati fondamentali, ma hanno scopi diversi e modalità d’uso distinte.
+
+| Caratteristica      | **Array**                                                 | **Object**                                                                                 |
+| ------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| **Scopo**           | Collezione ordinata di elementi                           | Collezione non ordinata di coppie chiave-valore                                            |
+| **Accesso ai dati** | Tramite **indice numerico** (`arr[0]`)                    | Tramite **chiave** (`obj.nome`)                                                            |
+| **Sintassi**        | Con **\[ ]** (quadre)                                     | Con **{ }** (graffe)                                                                       |
+| **Metodi utili**    | `push()`, `pop()`, `map()`, `filter()`…                   | `Object.keys()`, `Object.values()`…                                                        |
+| **Iterabilità**     | Facilmente iterabile in ordine con `for`, `forEach`, ecc. | Meno indicato per iterazioni sequenziali (ma possibile con `for...in`, `Object.entries()`) |
+
+
+🔹 DIFFERENZA TRA Array e Object
+
+| Caratteristica      | **Array**                          | **Object**                                  |
+| ------------------- | ---------------------------------- | ------------------------------------------- |
+| **Sintassi**        | `[ ]`                              | `{ }`                                       |
+| **Struttura dati**  | Ordinata                           | Non ordinata (coppie chiave-valore)         |
+| **Accesso ai dati** | Tramite indice numerico (`arr[0]`) | Tramite chiave (`obj.nome` o `obj["nome"]`) |
+| **Esempio**         | `["mela", "pera"]`                 | `{nome: "Luca", età: 30}`                   |
+| **Quando usarlo**   | Liste ordinate, insiemi iterabili  | Dati strutturati con proprietà              |
+
+
+🔸 ESEMPI
+
+✅ ARRAYconst frutti = ["mela", "banana", "kiwi"];
+
+console.log(frutti[0]);       // "mela"
+frutti.push("arancia");       // Aggiunge "arancia" alla fine
+console.log(frutti.length);   // 4
+
+
+
+✅ OBJECT
+
+const persona = {
+  nome: "Mario",
+  età: 30,
+  professione: "sviluppatore"
+};
+
+console.log(persona.nome);         // "Mario"
+console.log(persona["età"]);       // 30
+persona.eta = 31;                  // aggiorna l'età
+
+
+
+🧠 QUANDO USARLI
+
+| Caso d’uso                         | Scegli **Array** se…                        | Scegli **Object** se…                       |
+| ---------------------------------- | ------------------------------------------- | ------------------------------------------- |
+| Devi rappresentare una lista       | Gli elementi **hanno un ordine**            | Gli elementi sono **chiave-valore**         |
+| Devi fare calcoli / filtri / mappe | Vuoi usare metodi come `.map()`/`.filter()` | Vuoi cercare elementi per **nome** o **ID** |
+| Devi accedere a dati dinamicamente | Per indice numerico                         | Per proprietà con nome dinamico             |
+
+
+
+🔄 ESEMPI COMBINATI
+A volte si usano array di oggetti, come questo:
+
+const studenti = [
+  { nome: "Luca", voto: 28 },
+  { nome: "Anna", voto: 30 },
+  { nome: "Marco", voto: 25 }
+];
+
+console.log(studenti[1].nome);  // "Anna"
+
+===================================================================================================================================
+
+🔹 ARRAY – metodi utili
+
+| Metodo      | Descrizione                         | Esempio                       |
+| ----------- | ----------------------------------- | ----------------------------- |
+| `forEach()` | Itera su ogni elemento              | `arr.forEach(x => ...)`       |
+| `map()`     | Restituisce nuovo array trasformato | `arr.map(x => x * 2)`         |
+| `filter()`  | Restituisce un array filtrato       | `arr.filter(x => x > 10)`     |
+| `reduce()`  | Riduce l’array a un singolo valore  | `arr.reduce((a, b) => a + b)` |
+| `push()`    | Aggiunge un elemento in coda        | `arr.push("nuovo")`           |
+| `pop()`     | Rimuove l’ultimo elemento           | `arr.pop()`                   |
+| `length`    | Restituisce la lunghezza            | `arr.length`                  |
+
+
+
+▶️ .forEach() – esegue una funzione su ogni elemento
+
+const numeri = [1, 2, 3];
+
+numeri.forEach(num => {
+  console.log(num * 2);
+});
+// Output: 2, 4, 6
+
+
+
+▶️ .map() – crea un nuovo array trasformando gli elementi
+
+const quadrati = numeri.map(num => num * num);
+console.log(quadrati); // [1, 4, 9]
+
+
+
+▶️ .filter() – filtra gli elementi in base a una condizione
+
+const pari = numeri.filter(num => num % 2 === 0);
+console.log(pari); // [2]
+
+
+
+▶️ .reduce() – riduce l’array a un singolo valore
+
+const somma = numeri.reduce((acc, val) => acc + val, 0);
+console.log(somma); // 6
+
+===================================================================================================================================
+
+🔸 OBJECT – metodi utili
+
+| Metodo             | Descrizione                        | Esempio                        |
+| ------------------ | ---------------------------------- | ------------------------------ |
+| `Object.keys()`    | Array delle chiavi                 | `Object.keys(obj)`             |
+| `Object.values()`  | Array dei valori                   | `Object.values(obj)`           |
+| `Object.entries()` | Array di coppie `[chiave, valore]` | `Object.entries(obj)`          |
+| `for...in`         | Itera sulle chiavi                 | `for (let key in obj) { ... }` |
+| `hasOwnProperty()` | Verifica se una chiave esiste      | `obj.hasOwnProperty("età")`    |
+
+
+Immaginiamo questo oggetto:
+
+const persona = {
+  nome: "Giulia",
+  età: 27,
+  professione: "designer"
+};
+
+
+
+▶️ Object.keys() – array con tutte le chiavi
+
+console.log(Object.keys(persona));
+// ["nome", "età", "professione"]
+
+
+
+▶️ Object.values() – array con tutti i valori
+
+console.log(Object.values(persona));
+// ["Giulia", 27, "designer"]
+
+
+
+▶️ Object.entries() – array di coppie chiave/valore
+
+console.log(Object.entries(persona));
+/*
+[
+  ["nome", "Giulia"],
+  ["età", 27],
+  ["professione", "designer"]
+]
+*/
+
+
+
+▶️ for...in – cicla sulle chiavi
+
+for (let chiave in persona) {
+  console.log(`${chiave}: ${persona[chiave]}`);
+}
+
+===================================================================================================================================
+
+🔄 ARRAY DI OGGETTI – manipolazioni combinate
+
+const utenti = [
+  { nome: "Luca", età: 18 },
+  { nome: "Sofia", età: 25 },
+  { nome: "Dario", età: 30 }
+];
+
+// Filtra solo quelli sopra i 20 anni
+const maggiorenni = utenti.filter(u => u.età > 20);
+
+// Estrai solo i nomi
+const nomi = utenti.map(u => u.nome);
+
+// Somma le età
+const sommaEtà = utenti.reduce((acc, u) => acc + u.età, 0);
+
+console.log(maggiorenni); // [{nome: "Sofia",...}, {nome: "Dario",...}]
+console.log(nomi);        // ["Luca", "Sofia", "Dario"]
+console.log(sommaEtà);    // 73
+
+
+
+
