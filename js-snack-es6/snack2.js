@@ -95,3 +95,46 @@ Ecco come sarà il nuovo array risultati:
 
 console.log("Squadre con i falli subiti:");
 console.log(risultati);
+
+
+/* CODICE SENZA METODO MAP 
+
+
+CON DESTRUTTURAZIONE
+
+const risultati = [];
+for (let squadra of squadre) {
+  const { nome, falli } = squadra; // destrutturazione
+  risultati.push({ nome, falli });
+}     
+
+console.log("Squadre con i falli subiti:");
+console.log(risultati);     
+
+
+SENZA DESTRUTTURAZIONE  
+
+const risultati = [];
+for (let squadra of squadre) {
+  risultati.push({ nome: squadra.nome, falli: squadra.falli });
+}
+
+console.log("Squadre con i falli subiti:");
+console.log(risultati); 
+
+
+OPPURE
+
+const risultati = [];
+for (let i = 0; i < squadre.length; i++) {
+  const squadra = squadre[i];
+  risultati.push({
+    nome: squadra.nome,
+    falli: squadra.falli
+  });
+}
+
+console.log("Squadre con i falli subiti:");
+console.log(risultati);
+
+*/
