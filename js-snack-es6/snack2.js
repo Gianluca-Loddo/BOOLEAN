@@ -104,7 +104,7 @@ CON DESTRUTTURAZIONE
 
 const risultati = [];
 for (let squadra of squadre) {
-  const { nome, falli } = squadra; // destrutturazione
+  const { nome, falli } = squadra; // DESTRUTTURAZIONE
   risultati.push({ nome, falli });
 }     
 
